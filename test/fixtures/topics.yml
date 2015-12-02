@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  user_id: 1
+  length_limit_min: 1
+  length_limit_max: 1
+  articles_limit: 1
+  private: false
+  score_limit: 1
+  likes: 1
+  report_times: 1
+  comment_amount: 1
+  browse_times: 1
+  time_out: 1
+
+two:
+  title: MyString
+  user_id: 1
+  length_limit_min: 1
+  length_limit_max: 1
+  articles_limit: 1
+  private: false
+  score_limit: 1
+  likes: 1
+  report_times: 1
+  comment_amount: 1
+  browse_times: 1
+  time_out: 1
