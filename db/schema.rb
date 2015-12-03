@@ -11,7 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202033014) do
+ActiveRecord::Schema.define(version: 20151203093424) do
+
+  create_table "article_details", force: :cascade do |t|
+    t.integer  "article_id"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.boolean  "first_article"
+    t.integer  "likes"
+    t.integer  "report_times"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "length_limit_min"
+    t.integer  "length_limit_max"
+    t.integer  "articles_limit"
+    t.boolean  "private"
+    t.integer  "score_limit"
+    t.integer  "likes"
+    t.integer  "report_times"
+    t.integer  "comment_amount"
+    t.integer  "browse_times"
+    t.integer  "time_out"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
