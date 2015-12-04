@@ -1,0 +1,2 @@
+module ArticleCommentDetailsHelper
+end

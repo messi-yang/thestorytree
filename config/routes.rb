@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :topics
+  resources :articles
+  resources :article_details
+  resources :article_comments
+  resources :article_comment_details
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
