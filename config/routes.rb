@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :topics
   resources :articles
-  resources :article_details
+  resource :article_details
   resources :article_comments
-  resources :article_comment_details
+  resource :article_comment_details
   resource :static_pages do
     collection do
       get :introduction

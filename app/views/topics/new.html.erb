@@ -1,0 +1,38 @@
+<div id="topics_new" class="container-fluid">
+  <%= form_for @topic, url:{:controller =>"topics", action: "create"}, html:{} do |f|%>
+    <div class="form-group">
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title  ,:class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :length_limit_min, "Minimun Length Limit" %>
+      <%= f.text_field :length_limit_min ,:class => "form-control" %>
+    </div>
+      <%= f.label :length_limit_max, "Maximun Length Limit" %>
+      <%= f.text_field :length_limit_max,:class => "form-control" %>
+    <div class="form-group">
+      <%= f.label :articles_limit, "Articles Limit" %>
+      <%= f.text_field :articles_limit,:class => "form-control"  %>
+    </div>
+    <div class="form-group">
+      <%= f.label :private, "Privacy" %>
+      <%= f.text_field :private,:class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :score_limit, "Score Limit" %>
+      <%= f.text_field :score_limit,:class => "form-control" %>
+    </div>
+      <%= f.fields_for :articles do |article_form| %>
+        <%= article_form.text_field :user_id , :value=>current_user.id,:type=>"hidden" %>
+        <%= article_form.text_field :first_article , :value=>"true",:type=>"hidden" %>
+        <%= article_form.text_field :likes , :value=>0,:type=>"hidden" %>
+        <%= article_form.text_field :report_times , :value=>0,:type=>"hidden" %>
+        <%= article_form.text_field :comment_amount , :value=>0,:type=>"hidden" %>
+          <%= article_form.fields_for :article_detail do |article_detail_form| %>
+            <%= article_detail_form.label :content,"Content" %>
+            <%= article_detail_form.text_area :content , :class =>"form-control" ,:rows=>"10" %>
+          <% end %>
+      <% end %>
+    <button type="submit" class="btn btn-default">Submit</button>
+  <% end %>
+</div>
