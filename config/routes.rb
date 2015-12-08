@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root :to => 'static_pages#introduction'
   devise_for :users
-  resources :topics
+  resources :topics do
+    collection do
+      get :get_newest
+    end
+  end
   resources :articles
   resource :article_details
   resources :article_comments
@@ -9,6 +13,7 @@ Rails.application.routes.draw do
   resource :static_pages do
     collection do
       get :introduction
+      get :story_home
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
