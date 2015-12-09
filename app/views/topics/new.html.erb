@@ -1,33 +1,58 @@
-<div id="topics_new" class="container-fluid">
+<div id="topics_new" ng-app="topics_new" ng-controller="topics_new_ctrl">
   <%= form_for @topic, url:{:controller =>"topics", action: "create"}, html:{} do |f|%>
     <div class="form-group">
       <%= f.label :title, "Title" %>
       <%= f.text_field :title  ,:class => "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :length_limit_min, "Minimun Length Limit" %>
-      <%= f.text_field :length_limit_min ,:class => "form-control" %>
-    </div>
-      <%= f.label :length_limit_max, "Maximun Length Limit" %>
-      <%= f.text_field :length_limit_max,:class => "form-control" %>
-    <div class="form-group">
-      <%= f.label :articles_limit, "Articles Limit" %>
-      <%= f.text_field :articles_limit,:class => "form-control"  %>
+      <label>Content Length Limit</label>
+      <div class="radio">
+        <label ng-click="setContentLength(1)"><input type="radio" name="content_len_radio">Short(20~50)</label>
+        <label ng-click="setContentLength(2)"><input type="radio" name="content_len_radio">Medium(50~150)</label>
+        <label ng-click="setContentLength(3)"><input type="radio" name="content_len_radio">Long(100~300)</label>
+      </div>
     </div>
     <div class="form-group">
-      <%= f.label :private, "Privacy" %>
-      <%= f.text_field :private,:class => "form-control" %>
+      <label>Articles Limit</label>
+      <div class="radio">
+        <label ng-click="setArticlesLimit(10)"><input type="radio" name="arti_limit_radio">Short(10)</label>
+        <label ng-click="setArticlesLimit(30)"><input type="radio" name="arti_limit_radio">Medium(30)</label>
+        <label ng-click="setArticlesLimit(60)"><input type="radio" name="arti_limit_radio">Long(60)</label>
+      </div>
     </div>
     <div class="form-group">
-      <%= f.label :score_limit, "Score Limit" %>
-      <%= f.text_field :score_limit,:class => "form-control" %>
+      <label>Privacy</label>
+      <div class="radio">
+        <label ng-click="setPrivacy('false')"><input type="radio" name="privacy_radio">Public</label>
+        <label ng-click="setPrivacy('true')"><input type="radio" name="privacy_radio">Private</label>
+      </div>
     </div>
     <div class="form-group">
-      <%= f.label :time_out, "Time Out" %>
-      <%= f.text_field :time_out,:class => "form-control" %>
+      <label>Time Out</label>
+      <div class="radio">
+        <label ng-click="setTimeout(5)"><input type="radio" name="timeout_radio">Short(5)</label>
+        <label ng-click="setTimeout(20)"><input type="radio" name="timeout_radio">Medium(20)</label>
+        <label ng-click="setTimeout(60)"><input type="radio" name="timeout_radio">Long(60)</label>
+      </div>
     </div>
-      <%= f.text_field :browse_times ,:value=>"0" ,:type=>"hidden" %>
-      <%= f.text_field :comment_amount ,:value=>"0" ,:type=>"hidden" %>
+    <div class="form-group">
+      <label>Score Limit</label>
+      <div class="radio">
+        <label ng-click="setScoreLimit(1)"><input type="radio" name="score_limt_radio">1</label>
+        <label ng-click="setScoreLimit(5)"><input type="radio" name="score_limit_radio">5</label>
+        <label ng-click="setScoreLimit(10)"><input type="radio" name="score_limit_radio">10</label>
+        <label ng-click="setScoreLimit(30)"><input type="radio" name="score_limit_radio">30</label>
+        <label ng-click="setScoreLimit(50)"><input type="radio" name="score_limit_radio">50</label>
+      </div>
+    </div>
+    <%= f.text_field :browse_times ,:value=>"0" ,:type=>"hidden" %>
+    <%= f.text_field :comment_amount ,:value=>"1" ,:type=>"hidden" %>
+    <%= f.text_field :length_limit_min ,:type => "hidden",:class => "form-control" ,:value=>"{{length_min}}" %>
+    <%= f.text_field :length_limit_max ,:type => "hidden",:class => "form-control" ,:value=>"{{length_max}}" %>
+    <%= f.text_field :articles_limit ,:type => "hidden",:class => "form-control" ,:value=>"{{articles_limit}}" %>
+    <%= f.text_field :private,:type => "hidden",:class => "form-control" ,:value=>"{{privacy}}" %>
+    <%= f.text_field :time_out,:type => "hidden",:class => "form-control" ,:value=>"{{timeout}}" %>
+    <%= f.text_field :score_limit,:type => "hidden",:class => "form-control" ,:value=>"{{score_limit}}" %>
       <%= f.fields_for :articles do |article_form| %>
         <%= article_form.text_field :user_id , :value=>current_user.id,:type=>"hidden" %>
         <%= article_form.text_field :first_article , :value=>"true",:type=>"hidden" %>

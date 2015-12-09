@@ -1,4 +1,4 @@
-<div id="static_pages_story_home" class="container-fluid" ng-app="static_pages_story_home" ng-controller="show_topics">
+<div id="static_pages_story_home" class="container-fluid" ng-app="story_home" ng-controller="show_topics_ctrl">
   <h1>Topics</h1>
   <a class="btn btn-lg btn-warning" href="<%=new_topic_path%>" role="button">Create Topic</a>
   <div class="list-group" ng-repeat = "topic in topics">
@@ -9,12 +9,3 @@
   </div>
 </div>
 
-<script>
-  var app = angular.module('static_pages_story_home',[]);
-  app.controller("show_topics",function($scope,$http){
-    var url = "/topics/get_newest";
-    $http.get(url).success(function(response){
-      $scope.topics = response;
-    });
-  });
-</script>
