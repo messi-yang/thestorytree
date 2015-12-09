@@ -6,7 +6,11 @@ Rails.application.routes.draw do
       get :get_newest
     end
   end
-  resources :articles
+  resources :articles do
+    collection do
+      get :by_topic_id
+    end
+  end
   resource :article_details
   resources :article_comments
   resource :article_comment_details
