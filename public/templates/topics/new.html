@@ -1,0 +1,65 @@
+<form class="new_topic" id="new_topic" ng-submit="createTopic()" accept-charset="UTF-8"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="form-group">
+    <label for="topic_title">Title</label>
+    <input class="form-control" type="text" name="topic[title]" id="topic_title" ng-model="topic.title"/>
+  </div>
+  <div class="form-group">
+    <label>Content Length Limit</label>
+    <div class="radio">
+  	  <label ng-click="setContentLength(1)"><input type="radio" name="content_len_radio">Short(20~50)</label>
+  	  <label ng-click="setContentLength(2)"><input type="radio" name="content_len_radio">Medium(50~150)</label>
+  	  <label ng-click="setContentLength(3)"><input type="radio" name="content_len_radio">Long(100~300)</label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Articles Limit</label>
+    <div class="radio">
+  	  <label ng-click="setArticlesLimit(10)"><input type="radio" name="arti_limit_radio">Short(10)</label>
+  	  <label ng-click="setArticlesLimit(30)"><input type="radio" name="arti_limit_radio">Medium(30)</label>
+  	  <label ng-click="setArticlesLimit(60)"><input type="radio" name="arti_limit_radio">Long(60)</label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Privacy</label>
+    <div class="radio">
+  	  <label ng-click="setPrivacy('false')"><input type="radio" name="privacy_radio">Public</label>
+  	  <label ng-click="setPrivacy('true')"><input type="radio" name="privacy_radio">Private</label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Time Out</label>
+    <div class="radio">
+  	  <label ng-click="setTimeout(5)"><input type="radio" name="timeout_radio">Short(5)</label>
+  	  <label ng-click="setTimeout(20)"><input type="radio" name="timeout_radio">Medium(20)</label>
+  	  <label ng-click="setTimeout(60)"><input type="radio" name="timeout_radio">Long(60)</label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Score Limit</label>
+    <div class="radio">
+  	  <label ng-click="setScoreLimit(1)"><input type="radio" name="score_limt_radio">1</label>
+  	  <label ng-click="setScoreLimit(5)"><input type="radio" name="score_limit_radio">5</label>
+  	  <label ng-click="setScoreLimit(10)"><input type="radio" name="score_limit_radio">10</label>
+  	  <label ng-click="setScoreLimit(30)"><input type="radio" name="score_limit_radio">30</label>
+  	  <label ng-click="setScoreLimit(50)"><input type="radio" name="score_limit_radio">50</label>
+    </div>
+  </div>
+  <input value="{{topic.browse_times=0}}" type="hidden" name="topic[browse_times]" id="topic_browse_times"/>
+  <input value="{{topic.comment_amount=0}}" type="hidden" name="topic[comment_amount]" id="topic_comment_amount" />
+  <input type="hidden" class="form-control" value="{{topic.length_min}}" name="topic[length_limit_min]" id="topic_length_limit_min" />
+  <input type="hidden" class="form-control" value="{{topic.length_max}}" name="topic[length_limit_max]" id="topic_length_limit_max" />
+  <input type="hidden" class="form-control" value="{{topic.articles_limit}}" name="topic[articles_limit]" id="topic_articles_limit" />
+  <input type="hidden" class="form-control" value="{{topic.private}}" name="topic[private]" id="topic_private" />
+  <input type="hidden" class="form-control" value="{{topic.timeout}}" name="topic[time_out]" id="topic_time_out" />
+  <input type="hidden" class="form-control" value="{{topic.score_limit}}" name="topic[score_limit]" id="topic_score_limit" /> 
+  	<input value="1" type="hidden" name="topic[articles_attributes][0][user_id]" id="topic_articles_attributes_0_user_id"/>
+  	<input value="true" type="hidden" name="topic[articles_attributes][0][first_article]" id="topic_articles_attributes_0_first_article" />
+  	<input value="0" type="hidden" name="topic[articles_attributes][0][likes]" id="topic_articles_attributes_0_likes" />
+  	<input value="0" type="hidden" name="topic[articles_attributes][0][report_times]" id="topic_articles_attributes_0_report_times" />
+  	<input value="0" type="hidden" name="topic[articles_attributes][0][comment_amount]" id="topic_articles_attributes_0_comment_amount" />
+  	  
+  <label for="topic_articles_attributes_0_article_detail_attributes_content">Content</label>
+  <textarea class="form-control" rows="10" name="topic[articles_attributes][0][article_detail_attributes][content]" id="topic_articles_attributes_0_article_detail_attributes_content" ng-model="content">
+  </textarea>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

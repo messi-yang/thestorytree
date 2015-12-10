@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="StoryTree">
 <head>
   <title>Story Tree</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -14,8 +14,8 @@
       </div>
       <div class='navbar-collapse bs-navbar-collapse collapse' role='navigation'>
         <ul class='nav navbar-nav'>
-          <li class=''><a href='<%=introduction_static_pages_path%>'>Introduction</a></li>
-          <li class=''><a href='<%=story_home_static_pages_path%>'>Stories</a></li>
+          <li class=''><a href='#/introduction'>Introduction</a></li>
+          <li class=''><a href='/'>Stories</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
@@ -28,7 +28,7 @@
       </div>
     </div>
   </nav>
-  <div class="container container-fluid">
+  <div class="container container-fluid" ng-view>
     <%= yield %>
   </div>
 

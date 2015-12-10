@@ -1,5 +1,9 @@
 class StaticPagesController < ApplicationController
   layout "navbar"
+
+  def index
+  end  
+
   def introduction
   end
   
