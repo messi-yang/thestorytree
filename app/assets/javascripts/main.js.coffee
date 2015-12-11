@@ -13,5 +13,9 @@
     when('/topics/new',{
       templateUrl: '../templates/topics/new.html',
       controller: 'topicsNewCtrl'
+    }).
+    when('/showStory/:id',{
+      templateUrl: '../templates/articles/showStory.html',
+      controller: 'showStoryCtrl'
     })
 ])

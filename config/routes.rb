@@ -14,12 +14,6 @@ Rails.application.routes.draw do
   resource :article_details
   resources :article_comments
   resource :article_comment_details
-  resource :static_pages do
-    collection do
-      get :introduction
-      get :story_home
-    end
-  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

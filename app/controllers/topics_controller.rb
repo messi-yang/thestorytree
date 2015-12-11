@@ -8,15 +8,19 @@ class TopicsController < ApplicationController
   end
 
   def new
-    @topic = current_user.topics.build
-    @article =  @topic.articles.build
-    @article.build_article_detail
+    render json: {user_id:current_user.id}
   end
 
   def create
     @topic = current_user.topics.build(topic_params)
-    @topic.save
-    redirect_to story_home_static_pages_path
+    if @topic.save
+      @info = {status:"success"}
+      render json: @info
+    else
+      @info = {status:"fail"}
+      render json: @info
+    end
+    #redirect_to story_home_static_pages_path
   end
 
   def topic_params

@@ -1,15 +1,21 @@
 @StoryTree.controller 'topicsNewCtrl' , ['$scope','$http','$location',($scope,$http,$location)->
+
+  $http.get('topics/new').success((data)->
+    $scope.user_id=data.user_id
+    console.log($scope.user_id)
+  )
   $scope.topic={articles_attributes:{0:""}}
-  articles_attributes={
-    user_id:"1",
-    first_article:true,
-    likes:0,
-    report_times:0,
-    comment_amount:0
-    article_detail_attributes:{}
-  }
 
   $scope.createTopic = () ->
+    articles_attributes={
+      user_id:$scope.user_id,
+      first_article:true,
+      likes:0,
+      report_times:0,
+      comment_amount:0
+      article_detail_attributes:{}
+    }
+
     params={}
     params.topic=$scope.topic
     articles_attributes.article_detail_attributes.content=$scope.content
@@ -19,6 +25,7 @@
       url: '/topics'
       data: params
     }).success((data) ->
+      console.log(data.status)
       $location.path('/')
     )
 
