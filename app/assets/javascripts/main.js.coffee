@@ -4,11 +4,11 @@
   $routeProvider.
     when('/introduction',{
       templateUrl: '../templates/test.html',
-      controller: 'show_topics_ctrl'
+      controller: 'showTopicsCtrl'
     }).
     when('/',{
-      templateUrl: '../templates/story_home.html',
-      controller: 'show_topics_ctrl'
+      templateUrl: '../templates/storyHome.html',
+      controller: 'showTopicsCtrl'
     }).
     when('/topics/new',{
       templateUrl: '../templates/topics/new.html',

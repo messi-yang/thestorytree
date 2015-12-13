@@ -11,9 +11,7 @@ Rails.application.routes.draw do
       get :by_topic_id
     end
   end
-  resource :article_details
   resources :article_comments
-  resource :article_comment_details
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   end
   
   def by_topic_id
-    @articles = Topic.find(params[:topic_id]).articles.select("articles.*,article_details.content").joins(:article_detail)
+    @articles = Topic.find(params[:topic_id]).articles
     render json: @articles
   end
 
@@ -20,6 +20,6 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:topic_id ,:user_id , :likes , :first_article , :comment_amount , :report_times ,
-    :article_detail_attributes =>[:content] )
+    :content)
   end
 end

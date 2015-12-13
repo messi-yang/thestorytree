@@ -11,26 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203132626) do
-
-  create_table "article_comment_details", force: :cascade do |t|
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20151213143748) do
 
   create_table "article_comments", force: :cascade do |t|
     t.integer  "article_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "article_details", force: :cascade do |t|
-    t.integer  "article_id"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "articles", force: :cascade do |t|
@@ -42,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151203132626) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "comment_amount"
+    t.text     "content"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -50,7 +39,7 @@ ActiveRecord::Schema.define(version: 20151203132626) do
     t.integer  "length_limit_min"
     t.integer  "length_limit_max"
     t.integer  "articles_limit"
-    t.boolean  "private"
+    t.boolean  "privacy"
     t.integer  "score_limit"
     t.integer  "likes"
     t.integer  "report_times"
