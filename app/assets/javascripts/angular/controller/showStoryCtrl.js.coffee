@@ -1,4 +1,4 @@
-@StoryTree.controller 'showStoryCtrl' , ['$route','$scope','$http','$location','$routeParams',($route,$scope,$http,$location,$routeParams)->
+@StoryTree.controller 'showStoryCtrl' , ['$route','$scope','$http','$location','$routeParams','Auth',($route,$scope,$http,$location,$routeParams,Auth)->
   $scope.topicId=$routeParams.id
   url = "/articles/by_topic_id?topic_id="+$scope.topicId
 
@@ -7,14 +7,25 @@
     $scope.userId = $scope.articles[0].user_id
   )
   
+  # Used to show contiune story button
   $scope.showTextArea =false
   $scope.showContiButton = true
-
   $scope.displayTextArea = () ->
-    $scope.showTextArea = !$scope.showTextArea
-    $scope.showContiButton = !$scope.showContiButton
+    Auth.currentUser().
+    then((user)->
+      $scope.showTextArea = !$scope.showTextArea
+      $scope.showContiButton = !$scope.showContiButton
+    ).
+    then((error)->
+      console.log(error)
+    )
+    $scope.$on('devise:unauthorized',(event, xhr, deferred)->
+      prePath=$location.url()
+      $location.path('/signIn').search({path:prePath})
+    )
 
   $scope.createArticle = () ->
+    
     $scope.articlesAttributes={
       user_id:$scope.userId,
       first_article:true,

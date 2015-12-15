@@ -1,0 +1,31 @@
+<h2>Log in</h2>
+
+<form novalidate="novalidate" class="simple_form new_user" accept-charset="UTF-8">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="form-inputs">
+    <div class="form-group email optional user_email">
+      <label class="email optional control-label">Email</label>
+        <input class="string email optional form-control" autofocus="autofocus" type="email" ng-model="email"/>
+    </div>
+    <div class="form-group password optional user_password">
+      <label class="password optional control-label">Password</label>
+        <input class="password optional form-control" type="password" ng-model="password"/>
+    </div>
+    <div class="form-group boolean optional user_remember_me">
+      <div class="checkbox">
+        <input value="0" type="hidden" name="user[remember_me]" />
+        <label class="boolean optional" for="user_remember_me">
+	  <input class="boolean optional" type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+          Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <input type="submit" ng-click="signIn()" value="Log in" class="btn btn-default" />
+  </div>
+</form>
+
+<a href="/users/sign_up">Sign up</a><br />
+<a href="/users/password/new">Forgot your password?</a><br />
