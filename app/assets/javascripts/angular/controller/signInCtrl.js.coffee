@@ -1,9 +1,7 @@
 @StoryTree.controller 'signInCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
-  
-  urlParams = $location.search()
  
   $scope.signIn = () ->
-   
+    urlParams = $location.search()
     credentials ={
       email: $scope.email,
       password: $scope.password

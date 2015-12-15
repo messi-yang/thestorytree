@@ -10,7 +10,7 @@
   <div class="container container-fluid">
   <nav class='navbar navbar-dark bg-inverse' role="navigation">
       <div class="navbar-header">
-        <a class='navbar-brand' href='#'>Story Tree</a>
+        <a class='navbar-brand' href=''>Story Tree</a>
       </div>
       <div class='navbar-collapse bs-navbar-collapse collapse' role='navigation'>
         <ul class='nav navbar-nav'>
@@ -18,12 +18,9 @@
           <li class=''><a href='/'>Stories</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <% if current_user %>
-            <li class='' ng-click="signOut()"><a href="">Sign Out</a></li>
-          <% else %>
-            <li class=''><a href='<%=new_registration_path(:user)%>'>Register</a></li>
-            <li class=''><a href='#/signIn'>Log In</a></li>
-          <% end %>
+            <li class='' ng-click="signOut()" ng-show="showSignOut"><a href="">Sign Out</a></li>
+            <li class='' ng-show="showRegister"><a href='#/signUp'>Register</a></li>
+            <li class='' ng-show="showLogIn"><a href='#/signIn'>Log In</a></li>        
         </ul>
       </div>
   </nav>

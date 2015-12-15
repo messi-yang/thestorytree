@@ -20,7 +20,11 @@
     }).
     when('/signIn',{
       templateUrl: '../templates/users/signIn.html',
-      controller: 'signInCtrl'
+      controller: 'appCtrl'
+    }).
+    when('/signUp',{
+      templateUrl: '../templates/users/signUp.html',
+      controller: 'appCtrl'
     })
 ])
 
@@ -34,8 +38,8 @@
   # AuthProvider.logoutPath('/user/logout.json')
   
   # Customize register
-  # AuthProvider.registerMethod('PATCH')
-  # AuthProvider.registerPath('/user/sign_up.json')
+  AuthProvider.registerMethod('POST')
+  AuthProvider.registerPath('/users.json')
   
   # Customize the resource name data use namespaced under
   # Pass false to disable the namespace altogether.
@@ -49,5 +53,5 @@
   
   # Intercept 401 Unauthorized everywhere
   # Enables `devise:unauthorized` interceptor
-   AuthInterceptProvider.interceptAuth(true)
+  AuthInterceptProvider.interceptAuth(true)
 ])
