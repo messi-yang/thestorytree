@@ -1,0 +1,24 @@
+{
+  "name": "thestorytree",
+  "homepage": "https://github.com/DumDumGeniuss/thestorytree",
+  "authors": [
+    "DumDumGeniuss <dumdumgenius@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "AngularDevise": "angular-devise#~1.1.0"
+  }
+}

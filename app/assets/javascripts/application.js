@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular
+//= require AngularDevise/lib/devise-min.js
 //= require main
 //= require bootstrap-sprockets
 //= require_tree .
