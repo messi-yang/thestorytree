@@ -1,5 +1,13 @@
 @StoryTree.controller 'signUpCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
  
+  Auth.currentUser().
+  then((user)->
+    $location.path('/')
+  ).
+  then((error)->
+    console.log(error)
+  )
+
   $scope.signUp = () ->
     urlParams = $location.search()
     credentials ={
@@ -23,6 +31,6 @@
     )
     
     $scope.$on('devise:new-registration',(event,user)->
-
+      location.reload()
     )
 ]

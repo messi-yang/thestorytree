@@ -20,11 +20,11 @@
     }).
     when('/signIn',{
       templateUrl: '../templates/users/signIn.html',
-      controller: 'appCtrl'
+      controller: 'signInCtrl'
     }).
     when('/signUp',{
       templateUrl: '../templates/users/signUp.html',
-      controller: 'appCtrl'
+      controller: 'signUpCtrl'
     })
 ])
 
