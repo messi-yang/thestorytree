@@ -25,7 +25,6 @@
     )
 
   $scope.createArticle = () ->
-    
     $scope.articlesAttributes={
       user_id:$scope.userId,
       first_article:true,

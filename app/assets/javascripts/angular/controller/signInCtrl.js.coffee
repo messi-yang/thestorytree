@@ -23,6 +23,9 @@
 
     Auth.login(credentials,config).
     then((user)->
+      $('#showSignOut').show()
+      $('#showRegister').hide()
+      $('#showSignIn').hide()
       $location.path(urlParams.path||'/')
     ).
     then((error)->
@@ -30,7 +33,6 @@
     )
     
     $scope.$on('devise:login',(event,currentUser)->
-      location.reload()
     )
     $scope.$on('devise:new-session',(event,currentUser)->
 

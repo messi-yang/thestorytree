@@ -24,6 +24,9 @@
 
     Auth.register(credentials,config).
     then((registeredUser)->
+      $('#showSignOut').show()
+      $('#showRegister').hide()
+      $('#showSignIn').hide()
       $location.path(urlParams.path||'/')
     ).
     then((error)->
@@ -31,6 +34,5 @@
     )
     
     $scope.$on('devise:new-registration',(event,user)->
-      location.reload()
     )
 ]

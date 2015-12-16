@@ -1,20 +1,20 @@
 @StoryTree.controller 'appCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
-  $scope.showSignOut=true
-  $scope.showRegister=false
-  $scope.showLogIn=false
+  $('#showSignOut').show()
+  $('#showRegister').hide()
+  $('#showSignIn').hide()
   Auth.currentUser().
   then((user)->
-    $scope.showSignOut=true
-    $scope.showRegister=false
-    $scope.showLogIn=false
+    $('#showSignOut').show()
+    $('#showRegister').hide()
+    $('#showSignIn').hide()
   ).
   then((error)->
     console.log(error)
   )
   $scope.$on('devise:unauthorized',(event, xhr, deferred)->
-    $scope.showSignOut=false
-    $scope.showRegister=true
-    $scope.showLogIn=true
+    $('#showSignOut').hide()
+    $('#showRegister').show()
+    $('#showSignIn').show()
   )
   
   $scope.signOut = () ->
@@ -26,9 +26,9 @@
 
     Auth.logout(config).
     then((oldUser)->
-      $scope.showSignOut=false
-      $scope.showRegister=true
-      $scope.showLogIn=true
+      $('#showSignOut').hide()
+      $('#showRegister').show()
+      $('#showSignIn').show()
       url=$location.url()
       $location.path('/')
     ).
