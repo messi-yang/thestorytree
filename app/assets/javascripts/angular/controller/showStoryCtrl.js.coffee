@@ -30,7 +30,7 @@
   $scope.createArticle = () ->
     $scope.articlesAttributes={
       user_id:$scope.user.id,
-      first_article:true,
+      first_article:false,
       likes:0,
       report_times:0,
       comment_amount:0
