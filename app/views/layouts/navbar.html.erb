@@ -7,26 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container container-fluid">
   <nav class='navbar navbar-dark bg-inverse' role="navigation">
-      <div class="navbar-header">
-        <a class='navbar-brand' href='' id="test">Story Tree</a>
-      </div>
-      <div class='navbar-collapse bs-navbar-collapse collapse' role='navigation'>
-        <ul class='nav navbar-nav'>
-          <li class=''><a href='#/introduction'>Introduction</a></li>
-          <li class=''><a href='/'>Stories</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
+    <div class="container container-fluid">
+      <div class="row">
+        <div class="navbar-header">
+          <a class='navbar-brand' href='' id="test">Story Tree</a>
+        </div>
+        <div class='navbar-collapse bs-navbar-collapse collapse' role='navigation'>
+          <ul class='nav navbar-nav'>
+            <li class=''><a href='#/introduction'>Introduction</a></li>
+            <li class=''><a href='/'>Stories</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
             <li id="showSignOut" class='' ng-click="signOut()"><a href="">Sign Out</a></li>
             <li id="showRegister" class=''><a href='#/signUp'>Register</a></li>
             <li id="showSignIn" class=''><a href='#/signIn'>Log In</a></li>        
-        </ul>
+          </ul>
+        </div>
       </div>
+    </div>
   </nav>
-  <div ng-view>
+  <div class="container container-fluid" ng-view>
     <%= yield %>
-  </div>
   </div>
 
 </body>

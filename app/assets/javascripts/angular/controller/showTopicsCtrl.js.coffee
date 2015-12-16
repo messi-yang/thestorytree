@@ -4,6 +4,7 @@
 
   url = "/topics/get_newest"
   $http.get(url).success((data)->
+    console.log(data)
     $scope.topics = data
   )
   $scope.toNewTopics = ()->

@@ -3,12 +3,8 @@ class TopicsController < ApplicationController
   layout "navbar"
   
   def get_newest
-    @topics = Topic.order(created_at: :desc).limit(10)
+    @topics = Topic.select("topics.*,users.email").from("topics,users").where("topics.user_id=users.id").order(created_at: :desc).limit(10)
     render json: @topics
-  end
-
-  def new
-    render json: {user_id:current_user.id}
   end
 
   def create

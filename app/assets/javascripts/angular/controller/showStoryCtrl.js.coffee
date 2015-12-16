@@ -3,8 +3,9 @@
   url = "/articles/by_topic_id?topic_id="+$scope.topicId
 
   $http.get(url).success((data)->
-    $scope.articles = data
-    $scope.userId = $scope.articles[0].user_id
+    console.log(data)
+    $scope.articles = data.articles
+    $scope.topic = data.topic
   )
   
   # Used to show contiune story button
@@ -15,6 +16,8 @@
     then((user)->
       $scope.showTextArea = !$scope.showTextArea
       $scope.showContiButton = !$scope.showContiButton
+      $scope.user=user
+      console.log("User_id: "+$scope.user.id)
     ).
     then((error)->
       console.log(error)
@@ -26,7 +29,7 @@
 
   $scope.createArticle = () ->
     $scope.articlesAttributes={
-      user_id:$scope.userId,
+      user_id:$scope.user.id,
       first_article:true,
       likes:0,
       report_times:0,

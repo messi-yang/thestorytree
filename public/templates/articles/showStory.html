@@ -1,8 +1,10 @@
  
- <h1>This Story</h1>
- <ul class="list-group" ng-repeat="article in articles">
-   <li class="list-group-item list-group-item-success">
-     <p>{{article.content}}</p>
+ <h1>{{topic.title}}</h1>
+ <ul class="list-group">
+   <li class="list-group-item list-group-item-success" ng-repeat="article in articles">
+     <p>
+       {{article.content}}
+     </p>
    </li>
  </ul>
  <form ng-show="showTextArea">

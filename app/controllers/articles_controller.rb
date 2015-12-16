@@ -6,7 +6,11 @@ class ArticlesController < ApplicationController
   
   def by_topic_id
     @articles = Topic.find(params[:topic_id]).articles
-    render json: @articles
+    @topic = Topic.find(params[:topic_id])
+    render json: {
+             articles:@articles,
+             topic:@topic
+           }.to_json
   end
 
   def create
