@@ -35,5 +35,14 @@
     then((error)->
 
     )
+  
 
+
+  #CSS part
+  $scope.navbarCss={
+    'background-color':'#006400' 
+  }
+  $scope.whiteFontCss={
+    'color':'white'
+  }
 ]

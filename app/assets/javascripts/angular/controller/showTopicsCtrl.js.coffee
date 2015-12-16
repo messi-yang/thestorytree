@@ -1,6 +1,4 @@
 @StoryTree.controller 'showTopicsCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
-  
-  
 
   url = "/topics/get_newest"
   $http.get(url).success((data)->
@@ -10,4 +8,10 @@
   $scope.toNewTopics = ()->
     
     $location.path('/topics/new')   
+
+
+
+  #CSS part
+
+  $scope.topicBlockCss={'margin-top':'30px'}  
 ]
