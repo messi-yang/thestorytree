@@ -1,7 +1,7 @@
 @StoryTree.controller 'appCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
-  $('#showSignOut').show()
-  $('#showRegister').hide()
-  $('#showSignIn').hide()
+  #$('#showSignOut').show()
+  #$('#showRegister').hide()
+  #$('#showSignIn').hide()
   Auth.currentUser().
   then((user)->
     $('#showSignOut').show()
@@ -40,7 +40,7 @@
 
   #CSS part
   $scope.navbarCss={
-    'background-color':'#006400' 
+    'background-color':'#169a1a' 
   }
   $scope.whiteFontCss={
     'color':'white'

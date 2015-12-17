@@ -10,6 +10,7 @@
   <nav class='navbar' role="navigation" ng-style="navbarCss">
     <div class="container">
       <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="navbar-header">
           <a class='navbar-brand' href='' id="test" ng-style="whiteFontCss">Story Tree</a>
         </div>
@@ -25,10 +26,17 @@
           </ul>
         </div>
       </div>
+      </div>
     </div>
   </nav>
-  <div class="container container-fluid" ng-view>
-    <%= yield %>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div ng-view>
+          <%= yield %>
+        </div> 
+      </div>
+    </div>
   </div>
 
 </body>

@@ -5,8 +5,9 @@
     <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
       <a ng-if="$index%4==0" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
         <h2 class="list-group-item-heading">{{topic.title}}</h2>
-        <p>{{topic.content.substring(0,50)+"..."}}{{topic.content.length}}</p>
+        <p>{{topic.content.substring(0,50)+"..."}}</p>
         <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
+        <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
         <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
       </a>
     </div>
@@ -17,6 +18,7 @@
         <h2 class="list-group-item-heading">{{topic.title}}</h2>
         <p>{{topic.content.substring(0,50)+"..."}}</p>
         <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
+        <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
         <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
       </a>
     </div>
@@ -27,6 +29,7 @@
         <h2 class="list-group-item-heading">{{topic.title}}</h2>
         <p>{{topic.content.substring(0,50)+"..."}}</p>
         <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
+        <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
         <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
       </a>
     </div>
@@ -37,6 +40,7 @@
         <h2 class="list-group-item-heading">{{topic.title}}</h2>
         <p>{{topic.content.substring(0,50)+"..."}}</p>
         <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
+        <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
         <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
       </a>
     </div>

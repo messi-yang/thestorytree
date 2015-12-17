@@ -13,9 +13,8 @@
     </div>
     <div class="form-group boolean optional user_remember_me">
       <div class="checkbox">
-        <input value="0" type="hidden" name="user[remember_me]" />
-        <label class="boolean optional" for="user_remember_me">
-	  <input class="boolean optional" type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+        <label class="boolean optional">
+	  <input class="boolean optional" type="checkbox" ng-click="setRemember()"/>
           Remember me
         </label>
       </div>
