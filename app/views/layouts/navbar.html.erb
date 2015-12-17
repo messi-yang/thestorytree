@@ -6,8 +6,8 @@
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <nav class='navbar' role="navigation" ng-style="navbarCss">
+<body ng-style="bodyCss">
+  <nav class='navbar navbar-fixed-top' role="navigation" ng-style="navbarCss">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -29,14 +29,8 @@
       </div>
     </div>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div ng-view>
-          <%= yield %>
-        </div> 
-      </div>
-    </div>
+  <div ng-view>
+    <%= yield %> 
   </div>
 
 </body>

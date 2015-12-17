@@ -1,48 +1,53 @@
-<a class="btn btn-lg btn-warning" ng-click="toNewTopics()" role="button">Create Topic</a>
-<h1 class="text-left">New Topics !<br><small>There are new topics , please check it out</small></h1>
-<div class="row">
-  <div class="col-lg-3 col-md-3">
-    <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
-      <a ng-if="$index%4==0" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
-        <h2 class="list-group-item-heading">{{topic.title}}</h2>
-        <p>{{topic.content.substring(0,50)+"..."}}</p>
-        <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
-        <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
-        <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
-      </a>
+
+<div ng-style="firstDivCss">
+</div>
+<div class="container">
+  <a class="btn btn-lg btn-warning" ng-click="toNewTopics()" role="button">Create Topic</a>
+  <h1 class="text-left">New Topics !<br><small>There are new topics , please check it out</small></h1>
+  <div class="row">
+    <div class="col-lg-3 col-md-3">
+      <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
+        <a ng-if="$index%4==0" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
+          <h2 class="list-group-item-heading">{{topic.title}}</h2>
+          <p>{{topic.content.substring(0,50)+"..."}}</p>
+          <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
+          <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
+          <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
+        </a>
+      </div>
     </div>
-  </div>
-  <div class="col-lg-3 col-md-3">
-    <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
-      <a ng-if="$index%4==1" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
-        <h2 class="list-group-item-heading">{{topic.title}}</h2>
-        <p>{{topic.content.substring(0,50)+"..."}}</p>
-        <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
-        <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
-        <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
-      </a>
+    <div class="col-lg-3 col-md-3">
+      <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
+        <a ng-if="$index%4==1" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
+          <h2 class="list-group-item-heading">{{topic.title}}</h2>
+          <p>{{topic.content.substring(0,50)+"..."}}</p>
+          <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
+          <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
+          <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
+        </a>
+      </div>
     </div>
-  </div>
-  <div class="col-lg-3 col-md-3">
-    <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
-      <a ng-if="$index%4==2" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
-        <h2 class="list-group-item-heading">{{topic.title}}</h2>
-        <p>{{topic.content.substring(0,50)+"..."}}</p>
-        <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
-        <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
-        <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
-      </a>
-    </div>
+    <div class="col-lg-3 col-md-3">
+      <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
+        <a ng-if="$index%4==2" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
+          <h2 class="list-group-item-heading">{{topic.title}}</h2>
+          <p>{{topic.content.substring(0,50)+"..."}}</p>
+          <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
+          <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
+          <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
+        </a>
+      </div>
+    </div>  
+    <div class="col-lg-3 col-md-3">
+      <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
+        <a ng-if="$index%4==3" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
+          <h2 class="list-group-item-heading">{{topic.title}}</h2>
+          <p>{{topic.content.substring(0,50)+"..."}}</p>
+          <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
+          <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
+          <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
+        </a>
+      </div>
+    </div>  
   </div>  
-  <div class="col-lg-3 col-md-3">
-    <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
-      <a ng-if="$index%4==3" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
-        <h2 class="list-group-item-heading">{{topic.title}}</h2>
-        <p>{{topic.content.substring(0,50)+"..."}}</p>
-        <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
-        <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
-        <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
-      </a>
-    </div>
-  </div>  
-</div>  
+</div>

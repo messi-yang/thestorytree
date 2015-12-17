@@ -14,4 +14,10 @@
   #CSS part
 
   $scope.topicBlockCss={'margin-top':'30px'}  
+
+  $scope.firstDivCss={
+    'background-color':'#16b31a',
+    'height':'400px'
+  }  
+
 ]

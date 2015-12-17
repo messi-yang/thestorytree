@@ -1,7 +1,5 @@
 @StoryTree.controller 'appCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
-  #$('#showSignOut').show()
-  #$('#showRegister').hide()
-  #$('#showSignIn').hide()
+
   Auth.currentUser().
   then((user)->
     $('#showSignOut').show()
@@ -39,8 +37,16 @@
 
 
   #CSS part
+  $scope.bodyCss={
+    'margin-top':'50px'
+  }
+
   $scope.navbarCss={
-    'background-color':'#169a1a' 
+    'background':'#169a1a',  
+    'background':'-webkit-linear-gradient(#226022,#16b31a)', 
+    'background':'-o-linear-gradient(#226022, #16b31a)', 
+    'background':'-moz-linear-gradient(#226022, #16b31a)', 
+    'background':'linear-gradient(#226022, #16b31a)'
   }
   $scope.whiteFontCss={
     'color':'white'
