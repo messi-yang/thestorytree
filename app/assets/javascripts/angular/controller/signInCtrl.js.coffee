@@ -1,5 +1,7 @@
 @StoryTree.controller 'signInCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
- 
+  
+  $scope.rememberMe='0'
+
   Auth.currentUser().
   then((user)->
     $location.path('/')
@@ -7,12 +9,19 @@
   then((error)->
     console.log(error)
   )
+  
+  $scope.setRemember = ()->
+    if $scope.rememberMe == '0'
+      $scope.rememberMe ='1'
+    else
+      $scope.rememberMe ='0'
 
   $scope.signIn = () ->
     urlParams = $location.search()
     credentials ={
       email: $scope.email,
-      password: $scope.password
+      password: $scope.password,
+      remember_me: $scope.rememberMe
     }
     console.log(credentials)
     config ={

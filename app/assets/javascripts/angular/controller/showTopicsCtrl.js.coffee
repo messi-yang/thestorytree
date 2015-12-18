@@ -10,8 +10,7 @@
     $location.path('/topics/new')   
 
 
-
   #CSS part
 
-  $scope.topicBlockCss={'margin-top':'30px'}  
+
 ]
