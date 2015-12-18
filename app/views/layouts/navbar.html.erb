@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html ng-app="StoryTree" ng-controller="appCtrl"
+<html ng-app="StoryTree" ng-controller="appCtrl">
 <head>
   <title>Story Tree</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
-<body ng-style="bodyCss">
-  <nav class='navbar navbar-fixed-top' role="navigation" ng-style="navbarCss">
+<body id="body">
+  <nav class='navbar navbar-fixed-top' role="navigation" id="navbar">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="navbar-header">
-          <a class='navbar-brand' href='' id="test" ng-style="whiteFontCss">Story Tree</a>
+          <a class='navbar-brand whiteFont' href=''>Story Tree</a>
         </div>
         <div class='navbar-collapse bs-navbar-collapse collapse' role='navigation'>
           <ul class='nav navbar-nav'>
-            <li class=''><a href='#/introduction' ng-style="whiteFontCss">Introduction</a></li>
-            <li class=''><a href='/' ng-style="whiteFontCss">Stories</a></li>
+            <li class=''><a href='#/introduction' class="whiteFont">Introduction</a></li>
+            <li class=''><a href='/' class="whiteFont">Stories</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li id="showSignOut" class='' ng-click="signOut()"><a href="" ng-style="whiteFontCss">Sign Out</a></li>
-            <li id="showRegister" class=''><a href='#/signUp' ng-style="whiteFontCss">Register</a></li>
-            <li id="showSignIn" class=''><a href='#/signIn' ng-style="whiteFontCss">Log In</a></li>        
+            <li id="showSignOut" class='' ng-click="signOut()"><a href="" class="whiteFont">Sign Out</a></li>
+            <li id="showRegister" class=''><a href='#/signUp' class="whiteFont">Register</a></li>
+            <li id="showSignIn" class=''><a href='#/signIn' class="whiteFont">Log In</a></li>        
           </ul>
         </div>
       </div>

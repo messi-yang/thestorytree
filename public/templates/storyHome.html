@@ -1,12 +1,17 @@
 
-<div ng-style="firstDivCss">
+<div id="firstDiv">
+  <div class="container">
+    <h1 class="text-center fk">Topics</h1>
+    <button id="newTopicButton" type="button" class="btn btn-lg" ng-click="toNewTopics()" aria-label="Left Align">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create Topic
+    </button>
+  </div>
 </div>
 <div class="container">
-  <a class="btn btn-lg btn-warning" ng-click="toNewTopics()" role="button">Create Topic</a>
   <h1 class="text-left">New Topics !<br><small>There are new topics , please check it out</small></h1>
   <div class="row">
     <div class="col-lg-3 col-md-3">
-      <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
+      <div ng-repeat = "topic in topics" class="topicBlock">
         <a ng-if="$index%4==0" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
           <h2 class="list-group-item-heading">{{topic.title}}</h2>
           <p>{{topic.content.substring(0,50)+"..."}}</p>
@@ -17,7 +22,7 @@
       </div>
     </div>
     <div class="col-lg-3 col-md-3">
-      <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
+      <div ng-repeat = "topic in topics" class="topicBlock">
         <a ng-if="$index%4==1" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
           <h2 class="list-group-item-heading">{{topic.title}}</h2>
           <p>{{topic.content.substring(0,50)+"..."}}</p>
@@ -28,7 +33,7 @@
       </div>
     </div>
     <div class="col-lg-3 col-md-3">
-      <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
+      <div ng-repeat = "topic in topics" class="topicBlock">
         <a ng-if="$index%4==2" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
           <h2 class="list-group-item-heading">{{topic.title}}</h2>
           <p>{{topic.content.substring(0,50)+"..."}}</p>
@@ -39,7 +44,7 @@
       </div>
     </div>  
     <div class="col-lg-3 col-md-3">
-      <div ng-repeat = "topic in topics" ng-style="topicBlockCss">
+      <div ng-repeat = "topic in topics" class="topicBlock">
         <a ng-if="$index%4==3" href="#/showStory/{{topic.id}}" class="list-group-item list-group-item-success">
           <h2 class="list-group-item-heading">{{topic.title}}</h2>
           <p>{{topic.content.substring(0,50)+"..."}}</p>
