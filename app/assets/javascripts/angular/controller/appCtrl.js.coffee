@@ -34,7 +34,15 @@
 
     )
   
+  #make the navbar fade out on scroll
+  $(window).scroll(()->
+    if $(window).scrollTop() > 30
+      $('#navbar').fadeOut()
+    else
+      $('#navbar').fadeIn() 
 
+
+  )
 
   #CSS part
 ]

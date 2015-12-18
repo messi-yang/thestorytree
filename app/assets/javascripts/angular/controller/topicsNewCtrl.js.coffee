@@ -16,22 +16,8 @@
    
   
   # Initial the topic
-  $scope.topic={articles_attributes:{0:""},browse_times:0,comment_amount:0}
+  $scope.topic={articles_attributes:{0:""},browse_times:0,article_amount:0}
 
-  $scope.setContentLength = (select_number) ->
-    switch select_number
-      when 1 then(
-        $scope.topic.length_min=20
-        $scope.topic.length_max=50
-      )
-      when 2 then(
-        $scope.topic.length_min=50
-        $scope.topic.length_max=150
-      )
-      when 3 then(
-        $scope.topic.length_min=100
-        $scope.topic.length_max=300
-      )
   $scope.setArticlesLimit = (limit_number) ->
     $scope.topic.articles_limit=limit_number
   $scope.setPrivacy = (boolean) ->

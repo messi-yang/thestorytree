@@ -1,19 +1,49 @@
 .topicBlock{
-  margin-top:30px
+  margin-top:30px;
+}
+.topics-div{
+  transform: rotate(0deg);
+  animation-name:topics-div-show;
+  animation-duration:1s;
+  animation-delay:0s;
 }
 
-.fk{
-  font-size:70px;
-  color:black;
+@keyframes topics-div-show{
+  0%{
+    margin-left:300px;
+    transform: rotate(60deg);
+  }
+  100%{
+    margin-left:0px;
+    transform: rotate(0deg);
+  }
+}
+
+.titleFont{
+  font-size:80px;
+  color:white;
+  font-family: TimesNewRoman,"Times New Roman",Times,Baskerville,Georgia,serif;
+}
+
+.titleCemmentFont{
+  font-size:40px;
+  color:white;
 }
 
 #firstDiv{
   height:300px;
   background-color:#108d10;
 
-  background:#108d10;
-  background:-webkit-linear-gradient(#108d10,rgba(21,138,25,0.90),rgba(84,13,13,0.35));
-  background:-o-linear-gradient(#108d10,rgba(21,138,25,0.90),rgba(84,13,13,0.35));
-  background:-moz-linear-gradient(#108d10,rgba(21,138,25,0.90),rgba(84,13,13,0.35));
-  background:linear-gradient(#108d10,rgba(21,138,25,0.90),rgba(21,178,25,0.80));
+  background:#105d10;
+  background:-webkit-linear-gradient(#105d10,rgba(21,138,25,0.90),rgba(84,13,13,0.35));
+  background:-o-linear-gradient(#105d10,rgba(21,138,25,0.90),rgba(84,13,13,0.35));
+  background:-moz-linear-gradient(#105d10,rgba(21,138,25,0.90),rgba(84,13,13,0.35));
+  background:linear-gradient(#105d10,#106d10,#108d10);
+}
+
+#newTopicDiv{
+  float: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -2,13 +2,25 @@
   margin-top:50px;
 }
 
-#navbar{
-    background:#108d10;
-    background:-webkit-linear-gradient(#104010,#108d10);
-    background:-o-linear-gradient(#106010, #108d10);
-    background:-moz-linear-gradient(#106010, #108d10);
-    background:linear-gradient(#104010, #108d10);
+.navbar-custom{
+    background:#105d10;
+    background:-webkit-linear-gradient(#102010,#105d10);
+    background:-o-linear-gradient(#102010, #105d10);
+    background:-moz-linear-gradient(#102010, #105d10);
+    background:linear-gradient(#102010, #105d10);
 }
 .whiteFont{
     color:white;
+}
+.whiteFont:hover{
+    color:black;
+	font-size:150%;
+}
+
+.whilteFont:focus{
+  background-color:none;
+}
+
+.no-background-color{
+	background-color:none;
 }

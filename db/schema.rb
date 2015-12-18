@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151213143748) do
+ActiveRecord::Schema.define(version: 20151218140549) do
 
   create_table "article_comments", force: :cascade do |t|
     t.integer  "article_id"
@@ -41,13 +41,12 @@ ActiveRecord::Schema.define(version: 20151213143748) do
     t.integer  "articles_limit"
     t.boolean  "privacy"
     t.integer  "score_limit"
-    t.integer  "likes"
     t.integer  "report_times"
-    t.integer  "comment_amount"
     t.integer  "browse_times"
     t.integer  "time_out"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "article_amount"
   end
 
   create_table "users", force: :cascade do |t|

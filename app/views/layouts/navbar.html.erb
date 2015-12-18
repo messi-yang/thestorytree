@@ -7,12 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="body">
-  <nav class='navbar navbar-fixed-top' role="navigation" id="navbar">
+  <nav class='navbar navbar-fixed-top navbar-custom' role="navigation" id="navbar">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="navbar-header">
-          <a class='navbar-brand whiteFont' href=''>Story Tree</a>
+          <a class='navbar-brand whiteFont' href=''>
+          Story Tree</a>
         </div>
         <div class='navbar-collapse bs-navbar-collapse collapse' role='navigation'>
           <ul class='nav navbar-nav'>
@@ -22,7 +23,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li id="showSignOut" class='' ng-click="signOut()"><a href="" class="whiteFont">Sign Out</a></li>
             <li id="showRegister" class=''><a href='#/signUp' class="whiteFont">Register</a></li>
-            <li id="showSignIn" class=''><a href='#/signIn' class="whiteFont">Log In</a></li>        
+            <li id="showSignIn" class=''><a href='#/signIn' class="whiteFont">Log In</a></li>
           </ul>
         </div>
       </div>
@@ -31,6 +32,9 @@
   </nav>
   <div ng-view>
     <%= yield %> 
+  </div>
+  <div class="footer">
+    footer
   </div>
 
 </body>
