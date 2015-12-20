@@ -5,7 +5,7 @@ Devise.setup do |config|
     #OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
     config.omniauth :facebook, '327928300711144', 'b9ffb8e87f3f204aa47fc8e643ea6c0f'
   else
-    config.omniauth :facebook, 'DEPLOY_APP_ID', 'DEPLOY_APP_SECRET',{:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+    config.omniauth :facebook, '327698474067460', '2bdac70352519fad609ed90b3eeb2370',{:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   end
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
