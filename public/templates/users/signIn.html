@@ -25,14 +25,11 @@
     <div class="form-actions">
       <input type="submit" ng-click="signIn(0)" value="Log in" class="btn btn-default" />
     </div>
-  </form>
-
-  <a href="#/signUp">Sign up</a><br />
-  <a href="/users/auth/facebook" class="btn btn-social btn-lg btn-facebook">
-    <span class="fa fa-facebook"></span>
-    Sign In With Facebook
-  </a>
-  <div>
-    <button ng-click="signIn(1)" class="btn-lg btn-warning">Sgin In With Test Account</button>
-  </div>
+  </form><br>
+   <a href="#/signUp" class="btn btn-lg btn-google">Go to Sign-Up Page</a><br />
+   <a href="/users/auth/facebook" class="btn btn-social btn-lg btn-facebook">
+     <span class="fa fa-facebook"></span>      
+     Sign In With Facebook
+   </a><br>
+   <a ng-click="signIn(1)" class="btn btn-lg btn-twitter">Sgin In With Test Account</a>
 </div>
