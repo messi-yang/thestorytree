@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root :to => 'static_pages#index'
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :topics do
     collection do
       get :get_newest
