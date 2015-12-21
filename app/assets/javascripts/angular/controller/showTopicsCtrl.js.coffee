@@ -5,8 +5,8 @@
     console.log(data)
     $scope.topics = data
   )
-  $scope.toNewTopics = ()->
-    
+    	
+  $scope.toNewTopics = ()-> 
     $location.path('/topics/new')   
 
 

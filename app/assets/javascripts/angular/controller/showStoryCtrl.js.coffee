@@ -2,6 +2,16 @@
   $scope.topicId=$routeParams.id
   url = "/articles/by_topic_id?topic_id="+$scope.topicId
 
+  params={topic_id:$routeParams.id}
+  $http({
+    method: "POST"
+    url: "/add_topic_browse_times"
+    data: params
+  }).success((data) ->
+    console.log(data.status)
+  )	
+  
+  
   $http.get(url).success((data)->
     console.log(data)
     $scope.articles = data.articles
@@ -47,4 +57,7 @@
       console.log(data.status)
       $route.reload()
     )
+  
+
+	
 ]
