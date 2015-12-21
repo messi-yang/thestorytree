@@ -11,7 +11,8 @@
  * file per style scope.
  *= require_tree .
  *= require_self
- *
+ *= require bootstrap-social/bootstrap-social.css
+ *= require font-awesome/css/font-awesome.min.css
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
