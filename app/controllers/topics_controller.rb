@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :authenticate_user! ,:except =>[:get_newest]
+  before_action :authenticate_user! ,:except =>[:get_newest,:get_hot]
   layout "navbar"
   
   def get_newest
