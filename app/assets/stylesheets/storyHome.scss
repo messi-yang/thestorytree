@@ -1,6 +1,11 @@
 .topicBlock{
   margin-top:30px;
 }
+
+.topic-button{
+  background:#d0e9c6 !important;
+}
+
 .topics-div{
   transform: rotate(0deg);
   animation-name:topics-div-show;
@@ -44,9 +49,9 @@
   background-color:#108d10;
 
   background:#105d10;
-  background:-webkit-linear-gradient(#105d10,rgba(21,138,25,0.90),rgba(84,13,13,0.35));
-  background:-o-linear-gradient(#105d10,rgba(21,138,25,0.90),rgba(84,13,13,0.35));
-  background:-moz-linear-gradient(#105d10,rgba(21,138,25,0.90),rgba(84,13,13,0.35));
+  background:-webkit-linear-gradient(#105d10,#106d10,#108d10);
+  background:-o-linear-gradient(#105d10,#106d10,#108d10);
+  background:-moz-linear-gradient(#105d10,#106d10,#108d10);
   background:linear-gradient(#105d10,#106d10,#108d10);
 }
 

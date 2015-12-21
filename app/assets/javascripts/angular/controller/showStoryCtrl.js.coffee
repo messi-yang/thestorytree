@@ -17,6 +17,9 @@
     $scope.articles = data.articles
     $scope.topic = data.topic
   )
+
+  $scope.backToShowTopics = () ->
+    $location.path('/')
   
   # Used to show contiune story button
   $scope.showTextArea =false

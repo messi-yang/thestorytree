@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :topics do
     collection do
       get :get_newest
+      get :get_hot
     end
   end
   resources :articles do

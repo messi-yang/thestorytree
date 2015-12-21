@@ -1,17 +1,21 @@
-<div class="container"> 
- <h1 class="">{{topic.title}}</h1>
- <ul class="list-group">
-   <li class="list-group-item list-group-item-success" ng-repeat="article in articles">
-     <p class="">
-       {{article.content}}
-     </p>
-   </li>
- </ul>
- <form ng-show="showTextArea">
-   <textarea class="form-control" rows="5" ng-model="content"></textarea>
-   <button class="btn btn-success" ng-click="createArticle()">Submit</button>
-   <button class="btn btn-success" ng-click="displayTextArea()">Cancel</button>
- </form>
- <button class="btn btn-success" ng-click="displayTextArea()" ng-show="showContiButton">Continue Story!</button>
+<br>
+<div class="container">   
+  <button class="btn btn-lg btn-danger" ng-click="backToShowTopics()">
+    Back To Topics
+  </button>	
+  <h1 class="">{{topic.title}}</h1>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-success" ng-repeat="article in articles">
+      <p class="">
+        {{article.content}}
+      </p>
+    </li>
+  </ul>
+<form ng-show="showTextArea">
+  <textarea class="form-control" rows="5" ng-model="content"></textarea>
+  <button class="btn btn-success" ng-click="createArticle()">Submit</button>
+  <button class="btn btn-success" ng-click="displayTextArea()">Cancel</button>
+</form>
+<button class="btn btn-success" ng-click="displayTextArea()" ng-show="showContiButton">Continue Story!</button>
 <!-- <button class="btn btn-success" ng-click="{{showTextArea=!showTextArea}}" ng-show="showTextArea">Cancel</button>-->
 </div>

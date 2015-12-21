@@ -3,7 +3,12 @@ class TopicsController < ApplicationController
   layout "navbar"
   
   def get_newest
-    @topics = Topic.select("topics.*,users.email,articles.content").from("topics,users,articles").where("topics.user_id=users.id AND articles.topic_id=topics.id AND articles.first_article ='t'").order(created_at: :desc).limit(20)
+    @topics = Topic.select("topics.*,users.email,articles.content").from("topics,users,articles").where("topics.user_id=users.id AND articles.topic_id=topics.id AND articles.first_article ='t'").order(created_at: :desc).limit(15)
+    render json: @topics
+  end
+
+  def get_hot
+    @topics = Topic.select("topics.*,users.email,articles.content").from("topics,users,articles").where("topics.user_id=users.id AND articles.topic_id=topics.id AND articles.first_article ='t'").order(browse_times: :desc).limit(15)
     render json: @topics
   end
 
