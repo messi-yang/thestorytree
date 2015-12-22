@@ -37,11 +37,17 @@
 
 .article-title-font{
   font-size:35px;
-
+  white-space: normal;
+  word-wrap:break-word;
+  word-break:normal;
 }
 
 .article-content-font{
   font-size:20px;
+  white-space: normal;
+  word-wrap:break-word;
+  word-break:normal;
+
 }
 
 #firstDiv{
