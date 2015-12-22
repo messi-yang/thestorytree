@@ -7,35 +7,52 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="body">
-  <nav class='navbar navbar-fixed-top navbar-custom' role="navigation" id="navbar">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="navbar-header">
-          <a class='navbar-brand whiteFont' href=''>
-          Story Tree</a>
-        </div>
-        <div class='navbar-collapse bs-navbar-collapse collapse' role='navigation'>
-          <ul class='nav navbar-nav'>
-            <li class=''><a href='#/introduction' class="whiteFont">Introduction</a></li>
-            <li class=''><a href='/' class="whiteFont">Stories</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li id="showSignOut" class='' ng-click="signOut()"><a href="" class="whiteFont">Sign Out</a></li>
-            <li id="showRegister" class=''><a href='#/signUp' class="whiteFont">Register</a></li>
-            <li id="showSignIn" class=''><a href='#/signIn' class="whiteFont">Log In</a></li>
-          </ul>
-        </div>
-      </div>
-      </div>
-    </div>
-  </nav>
-  <div ng-view>
-    <%= yield %> 
-  </div>
-  <div class="footer">
-    footer
-  </div>
-
+	<div id="wrapper">
+		<nav class='navbar navbar-fixed-top navbar-custom' role="navigation" id="navbar">
+		  <div class="container">
+		    <div class="row">
+		      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		      <div class="navbar-header">
+		        <a class='navbar-brand whiteFont' href=''>
+		        Story Tree</a>
+		      </div>
+		      <div class='navbar-collapse bs-navbar-collapse collapse' role='navigation'>
+		        <ul class='nav navbar-nav'>
+		          <li class=''><a href='#/introduction' class="whiteFont">Introduction</a></li>
+		          <li class=''><a href='/' class="whiteFont">Stories</a></li>
+		        </ul>
+		        <ul class="nav navbar-nav navbar-right">
+		          <li id="showSignOut" class='' ng-click="signOut()"><a href="" class="whiteFont">Sign Out</a></li>
+		          <li id="showRegister" class=''><a href='#/signUp' class="whiteFont">Register</a></li>
+		          <li id="showSignIn" class=''><a href='#/signIn' class="whiteFont">Log In</a></li>
+		        </ul>
+		      </div>
+		    </div>
+		    </div>
+		  </div>
+		</nav>
+		<div ng-view id="main_content">
+		  <%= yield %> 
+		</div>
+		<footer class="container-fluid">
+			<div class="row">
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+							<h2 class="text-center" id="copyright"><strong>Story Tree</strong></h2>
+						</div>
+					</div>		
+				</div>
+				<div class="col-lg-7 col-md-7col-sm-7 col-xs-7">
+					<p><br>
+					Copyright &copy; 2015 TheStoryTree Corporation<br>
+					Designed by <a href="#"> TheStoryTree Group
+					<p>
+				</div>
+			</div>	
+		</footer> 
+	</div>
 </body>
 </html>
