@@ -11,13 +11,21 @@ class CountsController < ApplicationController
     end		
 	end
 	
-	def add_topic_article_amount
+	def add_topic_article_amounts
+		topic_article_amounts = Topic.find(params[:topic_id])
+		topic_article_amounts.article_amount += 1
+		
+		if topic_article_amounts.save
+			render json: {status: "success"}
+		else
+			render json: {status: "fail"}
+		end
 	end
-	
+
 	
 	private
 	
 	def count_params
-		params.require(:topic).permit(:browse_times)
+		params.require(:topic).permit(:topic_id)
 	end
 end

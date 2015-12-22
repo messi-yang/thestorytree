@@ -16,7 +16,7 @@
    
   
   # Initial the topic
-  $scope.topic={articles_attributes:{0:""},browse_times:0,article_amount:0}
+  $scope.topic={articles_attributes:{0:""},browse_times:0,article_amount:1}
 
   $scope.setArticlesLimit = (limit_number) ->
     $scope.topic.articles_limit=limit_number
