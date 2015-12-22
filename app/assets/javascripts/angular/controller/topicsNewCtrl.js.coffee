@@ -15,8 +15,9 @@
   )
    
   
-  # Initial the topic
-  $scope.topic={articles_attributes:{0:""},browse_times:0,article_amount:1}
+  # Initial the value
+  $scope.topic={articles_attributes:{0:""},browse_times:0,article_amount:1,title:''}
+  $scope.content=''
 
   $scope.setArticlesLimit = (limit_number) ->
     $scope.topic.articles_limit=limit_number
@@ -26,6 +27,18 @@
     $scope.topic.timeout = time_out
   $scope.setScoreLimit = (score_limit) ->
     $scope.topic.score_limit = score_limit
+
+  $scope.checkInput = () ->
+    if($scope.topic.title.length<1)
+      $scope.wrongTitle=true
+    else
+      $scope.wrongTitle=false 
+    if($scope.content.length<10)  
+      $scope.wrongContent=true
+    else
+      $scope.wrongContent=false 
+    if($scope.topic.title.length>0&&$scope.content.length>=10)
+      $scope.createTopic()
 
   $scope.createTopic = () ->
     #initial the articles attributes
