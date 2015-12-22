@@ -25,6 +25,9 @@
     when('/signUp',{
       templateUrl: '../templates/users/signUp.html',
       controller: 'signUpCtrl'
+    }).otherwise({
+      templateUrl: '../templates/users/signUp.html',
+      controller: 'signUpCtrl'
     })
 ])
 

@@ -8,6 +8,8 @@
       console.log(data)
       $scope.topics = data
     )
+    #remove and add to make animation restart
+    
   $scope.getNewTopics()
   
 
@@ -19,7 +21,7 @@
       console.log(data)
       $scope.topics = data
     )
-
+    #remove and add to make animation restart
 
   $scope.toShowStory =(topic_id)->
     $location.path('/showStory/'+topic_id)   

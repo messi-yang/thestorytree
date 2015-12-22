@@ -1,6 +1,5 @@
 @StoryTree.controller 'showStoryCtrl' , ['$route','$scope','$http','$location','$routeParams','Auth',($route,$scope,$http,$location,$routeParams,Auth)->
   $scope.topicId=$routeParams.id
-  url = "/articles/by_topic_id?topic_id="+$scope.topicId
 
   params={topic_id:$routeParams.id}
   $http({
@@ -12,6 +11,7 @@
   )	
   
   
+  url = "/articles/by_topic_id?topic_id="+$scope.topicId
   $http.get(url).success((data)->
     console.log(data)
     $scope.articles = data.articles

@@ -15,23 +15,26 @@
   </div>
 </div>
 <div class="container">
-    <div ng-click="getNewTopics()" class="btn btn-warning">
+    <div ng-click="getNewTopics()" class="btn btn-warning btn-lg">
       New
     </div>
-    <div ng-click="getHotTopics()" class="btn btn-danger">
+    <div ng-click="getHotTopics()" class="btn btn-danger btn-lg">
       Hot
     </div>
   <h1 class="text-left">{{topicsSearchType}}<br><small>{{topicsSearchTypeComment}}</small></h1>
-  <div class="row topics-div">
+  <div class="row topics-div" id="topics-div">
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
       <div ng-repeat = "topic in topics" class="topicBlock">
         <div ng-if="$index%4==0">
         <button ng-click="toShowStory({{topic.id}})" class="list-group-item topic-button">
           <h2 class="list-group-item-heading article-title-font">{{topic.title}}</h2>
           <p class="article-content-font">{{topic.content.substring(0,50)+"..."}}</p>
-          <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
-          <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
-          <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
+          <span class="glyphicon glyphicon-envelope" ></span>
+          <font class="text-left">{{topic.email}}</font><br>
+          <span class="glyphicon glyphicon-search"></span>          
+          <font class="text-left">{{topic.browse_times}}</font><br>
+          <span class="glyphicon glyphicon-calendar"></span>
+          <font class="text-left">{{topic.created_at.substring(0,16)}}</font>
         </button>
         </div>
       </div>
@@ -42,9 +45,12 @@
         <button ng-click="toShowStory({{topic.id}})" class="list-group-item topic-button">
           <h2 class="list-group-item-heading article-title-font">{{topic.title}}</h2>
           <p class="article-content-font">{{topic.content.substring(0,50)+"..."}}</p>
-          <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
-          <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
-          <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
+          <span class="glyphicon glyphicon-envelope" ></span>
+          <font class="text-left">{{topic.email}}</font><br>
+          <span class="glyphicon glyphicon-search"></span>          
+          <font class="text-left">{{topic.browse_times}}</font><br>
+          <span class="glyphicon glyphicon-calendar"></span>
+          <font class="text-left">{{topic.created_at.substring(0,16)}}</font>        
         </button>
         </div>
       </div>
@@ -55,9 +61,12 @@
         <button ng-click="toShowStory({{topic.id}})" class="list-group-item topic-button">
           <h2 class="list-group-item-heading article-title-font">{{topic.title}}</h2>
           <p class="article-content-font">{{topic.content.substring(0,50)+"..."}}</p>
-          <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
-          <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
-          <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
+          <span class="glyphicon glyphicon-envelope" ></span>
+          <font class="text-left">{{topic.email}}</font><br>
+          <span class="glyphicon glyphicon-search"></span>          
+          <font class="text-left">{{topic.browse_times}}</font><br>
+          <span class="glyphicon glyphicon-calendar"></span>
+          <font class="text-left">{{topic.created_at.substring(0,16)}}</font>
         </button>
         </div>
       </div>
@@ -68,10 +77,12 @@
         <button ng-click="toShowStory({{topic.id}})" class="list-group-item topic-button">
           <h2 class="list-group-item-heading article-title-font">{{topic.title}}</h2>
           <p class="article-content-font">{{topic.content.substring(0,50)+"..."}}</p>
-          <font class="text-left"><b>Mail: </b>{{topic.email}}</font><br>
-          <font class="text-left"><b>View Times: </b>{{topic.browse_times}}</font><br>
-          <font class="text-left"><b>Date: </b>{{topic.created_at.substring(0,16)}}</font>
-        </button>
+          <span class="glyphicon glyphicon-envelope" ></span>
+          <font class="text-left">{{topic.email}}</font><br>
+          <span class="glyphicon glyphicon-search"></span>          
+          <font class="text-left">{{topic.browse_times}}</font><br>
+          <span class="glyphicon glyphicon-calendar"></span>
+          <font class="text-left">{{topic.created_at.substring(0,16)}}</font>        </button>
         </div>
       </div>
     </div>  
