@@ -1,5 +1,15 @@
-#body{
-  margin-top:50px;
+html, #body{
+	height: 100%;
+}
+
+#wrapper {
+  min-height: 100%;  
+  position: relative;
+}
+
+#main_content {
+	padding-top:50px;
+	padding-bottom: 75px;
 }
 
 .navbar-custom{
@@ -24,3 +34,21 @@
 .no-background-color{
 	background-color:none;
 }
+
+footer {
+	position: absolute;
+	bottom: 0;
+	height: 75px;
+	width:100%;
+	background-color: #99f68b;
+	color: #009044;
+}
+
+#copyright {
+	color: #138501;
+	padding-top: 2px;
+	text-shadow: 2.5px 2.5px 2px #5c816d;
+	font-family: Times New Roman, Arial, serif;
+}
+
+
