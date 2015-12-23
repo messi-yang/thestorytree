@@ -1,4 +1,4 @@
-@StoryTree.controller 'showTopicsCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
+@StoryTree.controller 'storyHomeCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
   
   $scope.getNewTopics =() ->
     $scope.topicsSearchType="New Topics"
@@ -24,7 +24,7 @@
     #remove and add to make animation restart
 
   $scope.toShowStory =(topic_id)->
-    $location.path('/showStory/'+topic_id)   
+    $location.path('/articles/show/'+topic_id)   
     	
   $scope.toNewTopics = ()-> 
     $location.path('/topics/new')   

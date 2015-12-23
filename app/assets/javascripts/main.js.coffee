@@ -3,20 +3,20 @@
 @StoryTree.config(['$routeProvider',($routeProvider) ->
   $routeProvider.
     when('/introduction',{
-      templateUrl: '../templates/test.html',
-      controller: 'testCtrl'
+      templateUrl: '../templates/introduction.html',
+      controller: 'introductionCtrl'
     }).
     when('/',{
       templateUrl: '../templates/storyHome.html',
-      controller: 'showTopicsCtrl'
+      controller: 'storyHomeCtrl'
     }).
     when('/topics/new',{
       templateUrl: '../templates/topics/new.html',
       controller: 'topicsNewCtrl'
     }).
-    when('/showStory/:id',{
-      templateUrl: '../templates/articles/showStory.html',
-      controller: 'showStoryCtrl'
+    when('/articles/show/:id',{
+      templateUrl: '../templates/articles/show.html',
+      controller: 'articlesShowCtrl'
     }).
     when('/signIn',{
       templateUrl: '../templates/users/signIn.html',
@@ -26,8 +26,8 @@
       templateUrl: '../templates/users/signUp.html',
       controller: 'signUpCtrl'
     }).otherwise({
-      templateUrl: '../templates/users/signUp.html',
-      controller: 'signUpCtrl'
+      templateUrl: '../templates/storyHome.html',
+      controller: 'storyHomeCtrl'
     })
 ])
 
