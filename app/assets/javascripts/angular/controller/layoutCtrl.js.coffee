@@ -1,4 +1,4 @@
-@StoryTree.controller 'appCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
+@StoryTree.controller 'layoutCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
 
   Auth.currentUser().
   then((user)->

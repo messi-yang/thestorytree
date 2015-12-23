@@ -13,7 +13,8 @@
     credentials ={
       email: $scope.email,
       password: $scope.password,
-      password_confirmation: $scope.password_confirmation
+      password_confirmation: $scope.password_confirmation,
+      nickname: $scope.nickname
     }
     console.log(credentials)
     config ={
