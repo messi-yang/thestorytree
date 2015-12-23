@@ -28,19 +28,30 @@
     )
 
   
-  # Initial the value
-  $scope.topic={articles_attributes:{0:""},browse_times:0,article_amount:1,title:''}
+  # Initialize the value
+  $scope.topic={
+  	articles_attributes:{0:""},
+  	browse_times: 0,
+  	article_amount: 1,
+  	title: '',
+  	articles_limit: 10,
+  	privacy: false,
+  	time_out: 5,
+  	score_limit: 1
+  }
   $scope.content=''
-
+	
+	# Function for change values of radio buttons
   $scope.setArticlesLimit = (limit_number) ->
     $scope.topic.articles_limit=limit_number
   $scope.setPrivacy = (boolean) ->
     $scope.topic.privacy = boolean
   $scope.setTimeout = (time_out) ->
-    $scope.topic.timeout = time_out
+    $scope.topic.time_out = time_out
   $scope.setScoreLimit = (score_limit) ->
     $scope.topic.score_limit = score_limit
-
+	
+	# Use for checking if the title & content are blank
   $scope.checkInput = () ->
     if($scope.topic.title.length<1)
       $scope.wrongTitle=true
@@ -52,7 +63,8 @@
       $scope.wrongContent=false 
     if($scope.topic.title.length>0&&$scope.content.length>=10)
       $scope.createTopic()
-
+	
+	# Save Topic & Article to rails if checkInput is okay
   $scope.createTopic = () ->
     #initial the articles attributes
     articles_attributes={
