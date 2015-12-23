@@ -4,7 +4,9 @@
   Auth.currentUser().
   then((user)->
     $scope.user_id=user.id
-    console.log("User_id: "+$scope.user_id)
+    console.log("User_id: "+$scope.user_id+",user_nickname: "+user.nickname)
+    if(user.nickname==null)
+      $scope.nicknameModalCtrl='in nick-name-block'
   ).
   then((error)->
     console.log(error)
@@ -14,6 +16,17 @@
     $location.path('/signIn').search({path:prePath})
   )
    
+  $scope.setNickname = () ->
+    params={nickname:$scope.nickname} 
+    $http({
+      method:"POST",
+      url: "/users/add_nickname"
+      data: params
+    }).success((data) ->
+      console.log("status: "+data.status)
+      $scope.nicknameModalCtrl=''
+    )
+
   
   # Initial the value
   $scope.topic={articles_attributes:{0:""},browse_times:0,article_amount:1,title:''}
