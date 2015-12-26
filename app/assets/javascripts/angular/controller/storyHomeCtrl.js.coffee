@@ -11,7 +11,6 @@
     #remove and add to make animation restart
     
   $scope.getNewTopics()
-  
 
   $scope.getHotTopics =() ->
     $scope.topicsSearchType="Hot Topics"

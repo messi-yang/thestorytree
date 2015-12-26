@@ -1,3 +1,10 @@
+#storyHomePage{
+  background-image: url(image-path('story_home_background.jpg'));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+}
+
 .topicBlock{
   margin-top:30px;
 }
@@ -11,6 +18,10 @@
   animation-name:topics-div-show;
   animation-duration:1s;
   animation-delay:0s;
+}
+
+.topics-div-hide{
+  display:none;
 }
 
 @keyframes topics-div-show{
@@ -28,6 +39,15 @@
   font-size:80px;
   color:white;
   font-family: TimesNewRoman,"Times New Roman",Times,Baskerville,Georgia,serif;
+}
+
+.topics-search{
+  background-color: #ffffff;  opacity: 0.6;
+}
+
+.topics-search h1{
+  font-weight: bold;
+  color: #000000;
 }
 
 .titleCemmentFont{
@@ -51,7 +71,7 @@
 }
 
 #firstDiv{
-  height:300px;
+  height:500px;
   background-color:#108d10;
 
   background:#105d10;

@@ -1,4 +1,4 @@
-
+<div id="storyHomePage">
 <div id="firstDiv">
   <div class="container">
     <div class="row">
@@ -14,15 +14,17 @@
     </div>  
   </div>
 </div>
-<div class="container">
+<div id="topicsBillBoard" class="container">
     <div ng-click="getNewTopics()" class="btn btn-warning btn-lg">
       New
     </div>
     <div ng-click="getHotTopics()" class="btn btn-danger btn-lg">
       Hot
     </div>
-  <h1 class="text-left">{{topicsSearchType}}<br><small>{{topicsSearchTypeComment}}</small></h1>
-  <div class="row topics-div" id="topics-div">
+  <div class="topics-search">
+    <h1 class="text-left">{{topicsSearchType}}</h1>
+  </div>  
+  <div class="row topics-div-hide" id="topics-div">
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
       <div ng-repeat = "topic in topics" class="topicBlock">
         <div ng-if="$index%4==0">
@@ -100,4 +102,5 @@
       </div>
     </div>  
   </div>  
+</div>
 </div>
