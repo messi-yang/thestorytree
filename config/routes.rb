@@ -15,7 +15,11 @@ Rails.application.routes.draw do
       get :by_topic_id
     end
   end
-  resources :article_comments
+  resources :article_comments do
+    collection do
+      get :by_article_id
+    end
+  end
   
   # Manual routes for counts controller 
   post "/add_topic_browse_times" => "counts#add_topic_browse_times"

@@ -7,9 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :topics
   has_many :articles
-  has_many :article_details
   has_many :articles_comments
-  has_many :articles_comment_details
 
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

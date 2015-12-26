@@ -25,7 +25,12 @@
     when('/signUp',{
       templateUrl: '../templates/users/signUp.html',
       controller: 'signUpCtrl'
-    }).otherwise({
+    }).
+    when('/testComment',{
+      templateUrl: '../templates/testComment.html',
+      controller: 'testCommentCtrl'
+    }).
+    otherwise({
       templateUrl: '../templates/storyHome.html',
       controller: 'storyHomeCtrl'
     })
