@@ -2,7 +2,7 @@
   background-image: url(image-path('story_home_background.jpg'));
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center; 
+  background-size: 100% 500%; 
 }
 
 .topicBlock{
@@ -18,10 +18,6 @@
   animation-name:topics-div-show;
   animation-duration:1s;
   animation-delay:0s;
-}
-
-.topics-div-hide{
-  display:none;
 }
 
 @keyframes topics-div-show{
@@ -71,7 +67,7 @@
 }
 
 #firstDiv{
-  height:500px;
+  height:280px;
   background-color:#108d10;
 
   background:#105d10;

@@ -40,9 +40,7 @@
       $('#navbar').fadeOut()
     else
       $('#navbar').fadeIn()
-    if $(window).scrollTop() > 30
-      $('#topics-div').removeClass('topics-div-hide')
-      $('#topics-div').addClass('topics-div')
+
 
 
   )
