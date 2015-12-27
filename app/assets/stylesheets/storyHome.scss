@@ -67,8 +67,18 @@
 }
 
 #topics-bill-board{
-  height:600px;
+  height:700px;
   overflow: scroll;
+}
+
+.search-type-button{
+  position:relative;
+  top:30px;
+  left:0px;
+  color:white;
+  border-radius:50px !important;
+  background-color:#108d10 !important;
+  z-index:2;
 }
 
 #firstDiv{

@@ -11,22 +11,26 @@
           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create Topic
         </button>
       </div>
-    </div>  
+    </div>
+    <div class="row">
+      <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1">
+        <div ng-click="getNewTopics()" class="btn btn-lg search-type-button">
+          New
+        </div>
+        <div ng-click="getHotTopics()" class="btn btn-lg search-type-button">
+          Hot
+        </div>
+      </div>
+    </div>       
   </div>
 </div>
 <div id="topics-bill-board" class="container">
   <div class="row">
-    <div  class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1">
-      <div ng-click="getNewTopics()" class="btn btn-warning btn-lg">
-        New
-      </div>
-      <div ng-click="getHotTopics()" class="btn btn-danger btn-lg">
-        Hot
-      </div>      
+    <div  class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1">      
     </div>
     <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1">
       <div class="topics-search">
-        <h1 class="text-left">{{topicsSearchType}}</h1>
+        <h1 class="text-center">{{topicsSearchType}}</h1>
       </div>
     </div>  
   </div>    

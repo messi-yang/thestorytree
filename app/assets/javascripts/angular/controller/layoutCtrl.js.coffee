@@ -36,10 +36,12 @@
   
   #make the navbar fade out on scroll
   $(window).scroll(()->
-    if $(window).scrollTop() > 30
+    if $(window).scrollTop() > 35
       $('#navbar').fadeOut()
+      $('#topic-title-in-articles-show').addClass('topic-title-navbar')
     else
       $('#navbar').fadeIn()
+      $('#topic-title-in-articles-show').removeClass('topic-title-navbar')
 
 
 
