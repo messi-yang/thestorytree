@@ -14,20 +14,26 @@
     </div>  
   </div>
 </div>
-<div id="topicsBillBoard" class="container">
-    <div ng-click="getNewTopics()" class="btn btn-warning btn-lg">
-      New
+<div id="topics-bill-board" class="container">
+  <div class="row">
+    <div  class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1">
+      <div ng-click="getNewTopics()" class="btn btn-warning btn-lg">
+        New
+      </div>
+      <div ng-click="getHotTopics()" class="btn btn-danger btn-lg">
+        Hot
+      </div>      
     </div>
-    <div ng-click="getHotTopics()" class="btn btn-danger btn-lg">
-      Hot
-    </div>
-  <div class="topics-search">
-    <h1 class="text-left">{{topicsSearchType}}</h1>
-  </div>  
+    <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1">
+      <div class="topics-search">
+        <h1 class="text-left">{{topicsSearchType}}</h1>
+      </div>
+    </div>  
+  </div>    
   <div class="row topics-div" id="topics-div">
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+    <div class="col-lg-4 col-lg-offset-1 col-md-offset-1 col-md-4 col-sm-6 col-xs-6">
       <div ng-repeat = "topic in topics" class="topicBlock">
-        <div ng-if="$index%4==0">
+        <div ng-if="$index%2==0">
         <button ng-click="toShowStory({{topic.id}})" class="list-group-item topic-button">
           <h2 class="list-group-item-heading article-title-font">{{topic.title}}</h2>
           <p class="article-content-font">{{topic.content.substring(0,50)+"..."}}</p>
@@ -44,9 +50,9 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+    <div class="col-lg-4  col-lg-offset-1 col-md-offset-1 col-md-4 col-sm-6 col-xs-6">
       <div ng-repeat = "topic in topics" class="topicBlock">
-        <div ng-if="$index%4==1">
+        <div ng-if="$index%2==1">
         <button ng-click="toShowStory({{topic.id}})" class="list-group-item topic-button">
           <h2 class="list-group-item-heading article-title-font">{{topic.title}}</h2>
           <p class="article-content-font">{{topic.content.substring(0,50)+"..."}}</p>
@@ -63,44 +69,6 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-      <div ng-repeat = "topic in topics" class="topicBlock">
-        <div ng-if="$index%4==2">
-        <button ng-click="toShowStory({{topic.id}})" class="list-group-item topic-button">
-          <h2 class="list-group-item-heading article-title-font">{{topic.title}}</h2>
-          <p class="article-content-font">{{topic.content.substring(0,50)+"..."}}</p>
-          <span class="glyphicon glyphicon-user" ></span>
-          <font class="text-left">{{topic.nickname}}</font><br>
-          <span class="glyphicon glyphicon-search"></span>          
-          <font class="text-left">{{topic.browse_times}}</font><br>
-          <span class="glyphicon glyphicon-calendar"></span>
-          <font class="text-left">{{topic.created_at.substring(0,16)}}</font>
-          <br>
-          <span class="fa fa-file-text"></span>
-          <font>{{topic.article_amount}}</font>
-        </button>
-        </div>
-      </div>
-    </div>  
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-      <div ng-repeat = "topic in topics" class="topicBlock">
-        <div ng-if="$index%4==3" class="">
-        <button ng-click="toShowStory({{topic.id}})" class="list-group-item topic-button">
-          <h2 class="list-group-item-heading article-title-font">{{topic.title}}</h2>
-          <p class="article-content-font">{{topic.content.substring(0,50)+"..."}}</p>
-          <span class="glyphicon glyphicon-user" ></span>
-          <font class="text-left">{{topic.nickname}}</font><br>
-          <span class="glyphicon glyphicon-search"></span>          
-          <font class="text-left">{{topic.browse_times}}</font><br>
-          <span class="glyphicon glyphicon-calendar"></span>
-          <font class="text-left">{{topic.created_at.substring(0,16)}}</font>        
-          <br>
-          <span class="fa fa-file-text"></span>
-          <font>{{topic.article_amount}}</font>
-        </button>
-        </div>
-      </div>
-    </div>  
   </div>  
 </div>
 </div>

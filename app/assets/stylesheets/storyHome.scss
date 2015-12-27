@@ -2,7 +2,7 @@
   background-image: url(image-path('story_home_background.jpg'));
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 500%; 
+  background-size: 100% 100%; 
 }
 
 .topicBlock{
@@ -64,6 +64,11 @@
   word-wrap:break-word;
   word-break:normal;
 
+}
+
+#topics-bill-board{
+  height:600px;
+  overflow: scroll;
 }
 
 #firstDiv{
