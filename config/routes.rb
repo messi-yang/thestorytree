@@ -16,10 +16,12 @@ Rails.application.routes.draw do
     end
   end
   resources :article_comments
+  resources :article_likes
   
   # Manual routes for counts controller 
   post "/add_topic_browse_times" => "counts#add_topic_browse_times"
   post "/add_topic_article_amounts" => "counts#add_topic_article_amounts"
+  post "/add_article_likes" => "counts#add_article_likes"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
