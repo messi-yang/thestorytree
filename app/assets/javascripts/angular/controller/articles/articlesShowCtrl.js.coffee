@@ -22,6 +22,17 @@
   $scope.backToShowTopics = () ->
     $location.path('/')
   
+  $scope.checkLike = (article_id) ->
+  	$scope.article_id = article_id
+  	console.log($scope.article_id)
+  	liked = {}
+  	i = 0
+  	l = $scope.article_has_liked.length
+  	while i < l
+  		liked[$scope.article_has_liked[i]] = true
+  		i++
+  	hash = new Hash(liked)
+  
   $scope.emptyStar = true
   
   # Like & Unlike Button Mechanism
