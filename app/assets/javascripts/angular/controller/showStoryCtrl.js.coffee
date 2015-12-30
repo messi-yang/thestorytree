@@ -1,4 +1,4 @@
-@StoryTree.controller 'articlesShowCtrl' , ['$route','$scope','$http','$location','$routeParams','Auth',($route,$scope,$http,$location,$routeParams,Auth)->
+@StoryTree.controller 'showStoryCtrl' , ['$route','$scope','$http','$location','$routeParams','Auth',($route,$scope,$http,$location,$routeParams,Auth)->
   $scope.topicId=$routeParams.id
 
   params={topic_id:$routeParams.id}

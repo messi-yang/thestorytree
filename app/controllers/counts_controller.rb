@@ -22,10 +22,25 @@ class CountsController < ApplicationController
 		end
 	end
 
+	def add_article_likes
+		if params.size == 6
+			@article_likes = Article.find(params[:article_id])
+			@article_likes.likes += 1
+		else
+			@article_likes = Article.find(params[:article_id])
+			@article_likes.likes -= 1
+		end
+		
+		if @article_likes.save
+			render json: {article_likes: @article_likes.likes}
+		else
+			render json: {status: "fail"}
+		end
+	end
 	
 	private
 	
 	def count_params
-		params.require(:topic).permit(:topic_id)
+		params.require(:topic).permit(:topic_id, :user_id, :article_id)
 	end
 end

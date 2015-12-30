@@ -1,4 +1,6 @@
 @StoryTree.controller 'testCommentCtrl' , ['$route','$scope','$http','$location','$routeParams','Auth',($route,$scope,$http,$location,$routeParams,Auth)->
+
+
   $scope.topicId=$routeParams.id
 
   $scope.createArticleComment = () -> 

@@ -69,6 +69,8 @@
 #topics-bill-board{
   height:700px;
   overflow: scroll;
+  border-top-style:solid;
+  border-top-width:5px;
 }
 
 .search-type-button{
@@ -83,13 +85,14 @@
 
 #firstDiv{
   height:280px;
-  background-color:#108d10;
+  #background-color:#108d10;
 
-  background:#105d10;
-  background:-webkit-linear-gradient(#105d10,#106d10,#108d10);
-  background:-o-linear-gradient(#105d10,#106d10,#108d10);
-  background:-moz-linear-gradient(#105d10,#106d10,#108d10);
-  background:linear-gradient(#105d10,#106d10,#108d10);
+  #background:#105d10;
+  #background:-webkit-linear-gradient(#105d10,#106d10,#108d10);
+  #background:-o-linear-gradient(#105d10,#106d10,#108d10);
+  #background:-moz-linear-gradient(#105d10,#106d10,#108d10);
+  #background:linear-gradient(#105d10,#106d10,#108d10);
+
 }
 
 #newTopicDiv{

@@ -17,10 +17,30 @@
           <font class="article-content-font">
             {{article.content}}
           </font>
-          <br>
-          <h3 class="text-right">
-            <span class="glyphicon glyphicon-calendar">{{article.created_at.substring(0,16)}}</span>
-          </h3>
+          <br><br>
+          <table class="table table-responsive">
+        		<tbody>
+        			<tr>
+    						<td class="text-left">
+    							<div ng-if="checkLike(article.id)"> 
+		  							<button class="btn btn-link" ng-click="likeItOrNot(article.id, topic.id)">
+		  								<span class="glyphicon glyphicon-star" id="infoSize"></span>
+		  							</button>
+    							</div>
+<!--    							<div ng-if="checkLike(article.id)">
+		  							<button class="btn btn-link" ng-click="likeItOrNot(article.id, topic.id)">
+		  								<span class="glyphicon glyphicon-star-empty" id="infoSize"></span>
+		  							</button>
+    							</div>
+-->    							{{article.likes}}
+    						</td>
+    						<td class="text-right">
+    							<span class="glyphicon glyphicon-calendar" id="infoSize"></span>
+    							{{article.created_at.substring(0,16)}}
+       			 		</td>
+       				</tr>
+       			</tbody>
+          </table>
         </li>
       </ul>
       <form ng-show="showTextArea">
