@@ -19,7 +19,6 @@
     "tests"
   ],
   "dependencies": {
-    "AngularDevise": "angular-devise#~1.1.0",
-    "bootstrap-social": "~4.11.0"
+    "AngularDevise": "angular-devise#~1.1.0"
   }
 }
