@@ -1,17 +1,17 @@
-<br>
+<div id="articlesShowPage">
 <div class="container">   
-  <button class="btn btn-lg btn-danger" ng-click="backToShowTopics()">
-    Back To Topics
-  </button>	
-</div>  
-<div class="container">   
+  <button class="back-to-story-home-btn btn btn-lg btn-danger" ng-click="backToShowTopics()">
+    <i class="glyphicon glyphicon-menu-left"></i>
+  </button>   
+  <div id="topic-title-in-articles-show">
+    <h1 class="text-center">{{topic.title}}</h1>
+  </div>
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">    
-      <h1 class="">{{topic.title}}</h1>
       <ul class="list-group">
         <li class="list-group-item list-group-item-success" ng-repeat="article in articles">
           <h3>
-            <span class="glyphicon glyphicon-user">{{article.email}}:</span>
+            <span class="glyphicon glyphicon-user">{{article.nickname}}:</span>
           </h3> 
           <br>
           <font class="article-content-font">
@@ -52,3 +52,7 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
+=======
+</div>
+>>>>>>> upstream/master

@@ -13,6 +13,7 @@ group :production do
 end
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
+gem "font-awesome-rails"
 gem 'sass-rails', '~> 5.0'
 # Use simple_form to facilitate the bootstrap
 gem 'simple_form'

@@ -2,6 +2,51 @@
   font-size:30px !important;
 }
 
+
+#articlesShowPage{
+}
+
+.topic-title-navbar h1{
+  position: fixed;
+  top:-20px;
+  left:-20px;
+  z-index:2;
+  padding-left:30px;
+  padding-right:30px;
+  background-color:#108d10;
+  border-radius:30px !important;
+  animation-name:topic-title-navbar-move-left;
+  animation-duration:1s;
+  animation-delay:0s;
+ }
+
+@keyframes topic-title-navbar-move-left{
+  0%{
+    position: fixed;
+    top:30px;
+    left:500px;
+    z-index:2;
+    background-color:none;
+  }
+  100%{
+    position: fixed;
+    top:-20px;
+    left:-20px;
+    z-index:2;
+    background-color:#108d10;
+  }  
+}
+
+.back-to-story-home-btn{
+  position: fixed;
+  left:0px;
+  bottom:90px;
+  z-index:2;
+  border-radius:30px !important;
+
+}
+
+
 #infoSize {
 	font-size: 20px;
 }

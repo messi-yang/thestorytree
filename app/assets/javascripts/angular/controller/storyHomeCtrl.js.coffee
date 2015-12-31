@@ -1,5 +1,5 @@
 @StoryTree.controller 'storyHomeCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
-  
+
   $scope.getNewTopics =() ->
     $scope.topicsSearchType="New Topics"
     $scope.topicsSearchTypeComment="There are new topics , please check it out"
@@ -11,7 +11,6 @@
     #remove and add to make animation restart
     
   $scope.getNewTopics()
-  
 
   $scope.getHotTopics =() ->
     $scope.topicsSearchType="Hot Topics"

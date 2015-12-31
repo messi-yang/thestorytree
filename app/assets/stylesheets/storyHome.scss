@@ -1,3 +1,10 @@
+#storyHomePage{
+  background-image: url(image-path('story_home_background.jpg'));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%; 
+}
+
 .topicBlock{
   margin-top:30px;
 }
@@ -30,6 +37,15 @@
   font-family: TimesNewRoman,"Times New Roman",Times,Baskerville,Georgia,serif;
 }
 
+.topics-search{
+  background-color: #ffffff;  opacity: 0.6;
+}
+
+.topics-search h1{
+  font-weight: bold;
+  color: #000000;
+}
+
 .titleCemmentFont{
   font-size:40px;
   color:white;
@@ -50,15 +66,33 @@
 
 }
 
-#firstDiv{
-  height:300px;
-  background-color:#108d10;
+#topics-bill-board{
+  height:700px;
+  overflow: scroll;
+  border-top-style:solid;
+  border-top-width:5px;
+}
 
-  background:#105d10;
-  background:-webkit-linear-gradient(#105d10,#106d10,#108d10);
-  background:-o-linear-gradient(#105d10,#106d10,#108d10);
-  background:-moz-linear-gradient(#105d10,#106d10,#108d10);
-  background:linear-gradient(#105d10,#106d10,#108d10);
+.search-type-button{
+  position:relative;
+  top:30px;
+  left:0px;
+  color:white;
+  border-radius:50px !important;
+  background-color:#108d10 !important;
+  z-index:2;
+}
+
+#firstDiv{
+  height:280px;
+  #background-color:#108d10;
+
+  #background:#105d10;
+  #background:-webkit-linear-gradient(#105d10,#106d10,#108d10);
+  #background:-o-linear-gradient(#105d10,#106d10,#108d10);
+  #background:-moz-linear-gradient(#105d10,#106d10,#108d10);
+  #background:linear-gradient(#105d10,#106d10,#108d10);
+
 }
 
 #newTopicDiv{
