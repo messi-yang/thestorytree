@@ -1,7 +1,7 @@
 class ArticleLikesController < ApplicationController
 	
 	def create
-		@article_record = ArticleLike.new(count_params)
+		@article_record = ArticleLike.create(count_params)
 		
 		if @article_record.save
 			render json: {article_likes_id: @article_record.id}

@@ -16,10 +16,9 @@ ActiveRecord::Schema.define(version: 20151228114011) do
   create_table "article_comments", force: :cascade do |t|
     t.integer  "article_id"
     t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "content"
-    t.text     "comment_content"
   end
 
   create_table "article_likes", force: :cascade do |t|
