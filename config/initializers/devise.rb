@@ -4,8 +4,10 @@ Devise.setup do |config|
   if Rails.env.development?
     #OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
     config.omniauth :facebook, '327928300711144', 'b9ffb8e87f3f204aa47fc8e643ea6c0f'
+    config.omniauth :google_oauth2, '283529638525-7rc2ns1m4hv6c03ca2siihuhdm1f75f2.apps.googleusercontent.com', 'ztgm9oHMcx9X1KYCUvYXgQpn'
   else
     config.omniauth :facebook, '327698474067460', '2bdac70352519fad609ed90b3eeb2370',{:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+    config.omniauth :google_oauth2, '283529638525-7rc2ns1m4hv6c03ca2siihuhdm1f75f2.apps.googleusercontent.com', 'ztgm9oHMcx9X1KYCUvYXgQpn',{:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   end
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing

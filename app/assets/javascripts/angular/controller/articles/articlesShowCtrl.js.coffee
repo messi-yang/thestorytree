@@ -29,6 +29,15 @@
   	)
   
 
+  Auth.currentUser().
+    then((user)->
+      $scope.user=user
+      console.log("User_id: "+$scope.user.id)
+    ).
+    then((error)->
+      console.log(error)
+    )
+
   $scope.backToShowTopics = () ->
     $location.path('/')
   
@@ -50,6 +59,7 @@
   		$scope.topic_id = topic_id
   		console.log("User id:" + $scope.user.id)
   		if $scope.article_id in $scope.article_has_liked
+  			# like-count in Article Model -1 through counts_controller
   			params = {article_id: $scope.article_id}
   			$http({
   				method: "POST",
@@ -59,6 +69,7 @@
   				console.log(data)
   				$scope.articles[article_id].likes = data.article_likes
   			)
+  			# delete user & topic info. about the article liked through article_likes_controller
   			$http({
   				method: "GET",
   				url: "/article_likes/find_delete_id",
@@ -86,7 +97,7 @@
   				console.log(data)
   				$scope.articles[article_id].likes = data.article_likes
   			)
-  			# record user & topic info. about the article they liked through article_likes_controller
+  			# record user & topic info. about the article liked through article_likes_controller
   			$http({
   				method: "POST",
   				url: "/article_likes",
@@ -104,20 +115,12 @@
   $scope.showTextArea = false
   $scope.showContiButton = true
   $scope.displayTextArea = () ->
-    Auth.currentUser().
-    then((user)->
+    if $scope.user!=undefined
       $scope.showTextArea = !$scope.showTextArea
       $scope.showContiButton = !$scope.showContiButton
-      $scope.user=user
-      console.log("User_id: "+$scope.user.id)
-    ).
-    then((error)->
-      console.log(error)
-    )
-    $scope.$on('devise:unauthorized',(event, xhr, deferred)->
-      prePath=$location.url()
+    else
+      prePath = $location.url()
       $location.path('/signIn').search({path:prePath})
-    )
 
   $scope.createArticle = () -> 
     # use to count article amounts under the same topic
