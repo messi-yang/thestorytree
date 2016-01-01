@@ -4,7 +4,7 @@
   Auth.currentUser().
   then((user)->
     $scope.user_id=user.id
-    console.log("User_id: "+$scope.user_id+",user_nickname: "+user.nickname)
+    console.log("User_id: "+$scope.user_id+", user_nickname: "+user.nickname)
     if(user.nickname==null)
       $scope.nicknameModalCtrl='in nick-name-block'
   ).

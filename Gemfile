@@ -26,8 +26,9 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use devise to conduct User authentication
 gem 'devise'
-gem 'omniauth'
+gem 'omniauth-oauth2','~> 1.3.1'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 # AngularJS
 gem 'angularjs-rails'
