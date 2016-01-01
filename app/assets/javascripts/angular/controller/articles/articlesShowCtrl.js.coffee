@@ -16,34 +16,66 @@
     console.log(data)
     $scope.articles = data.articles
     $scope.topic = data.topic
-    $scope.article_has_liked = data.article_has_liked
   )
+  
+  Auth.currentUser().
+  	then((user) ->
+  		$scope.user = user
+  		console.log("User_id: " + $scope.user.id)
+  		$scope.getArticleLikeList()
+  	).
+  	then((error) ->
+  		console.log(error)
+  	)
+  
 
   $scope.backToShowTopics = () ->
     $location.path('/')
   
   $scope.checkLike = (article_id) ->
   	$scope.article_id = article_id
-  	console.log($scope.article_id)
-  	liked = {}
-  	i = 0
-  	l = $scope.article_has_liked.length
-  	while i < l
-  		liked[$scope.article_has_liked[i]] = true
-  		i++
-  	hash = new Hash(liked)
-  
-  $scope.emptyStar = true
+  	if $scope.article_id in $scope.article_has_liked
+  		#console.log("yes")
+  		#console.log($scope.article_id)
+  		true
+  	else
+  		#console.log("no")
+  		#console.log($scope.article_id)
+  		false
   
   # Like & Unlike Button Mechanism
   $scope.likeItOrNot = (article_id, topic_id) ->
-  	Auth.currentUser().
-  	then((user) ->
-  		$scope.user = user
+  	if $scope.user != undefined
   		$scope.article_id = article_id
   		$scope.topic_id = topic_id
   		console.log("User id:" + $scope.user.id)
-  		if $scope.emptyStar == true
+  		if $scope.article_id in $scope.article_has_liked
+  			params = {article_id: $scope.article_id}
+  			$http({
+  				method: "POST",
+  				url: "/add_article_likes"
+  				data: params
+  			}).success((data) ->
+  				console.log(data)
+  				$scope.articles[article_id].likes = data.article_likes
+  			)
+  			$http({
+  				method: "GET",
+  				url: "/article_likes/find_delete_id",
+  				params: {topic_id: $scope.topic_id, user_id: $scope.user.id, article_id: $scope.article_id}
+  			}).success((data) ->
+  				console.log(data)
+  				$scope.delete_id = data.delete_id
+  				
+  				$http({
+						method: "DELETE",
+						url: "/article_likes/" + $scope.delete_id,
+  				}).success((data) ->
+  					console.log(data.status)
+  					$scope.getArticleLikeList()
+  				)
+  			)
+  		else
   			# like-count in Article Model +1 through counts_controller
   			params = {user_id: $scope.user.id, article_id: $scope.article_id, topic_id: $scope.topic.id}
   			$http({
@@ -52,8 +84,7 @@
   				data: params
   			}).success((data) ->
   				console.log(data)
-  				$scope.$apply = () ->
-  					$scope.likes = data.article_likes
+  				$scope.articles[article_id].likes = data.article_likes
   			)
   			# record user & topic info. about the article they liked through article_likes_controller
   			$http({
@@ -63,34 +94,11 @@
   			}).success((data) ->
   				console.log(data)
   				$scope.article_likes_id = data.article_likes_id
-  				$scope.emptyStar = !$scope.emptyStar
+  				$scope.getArticleLikeList() 
   			)
-  		else
-  			params = {article_id: $scope.article_id}
-  			$http({
-  				method: "POST",
-  				url: "/add_article_likes"
-  				data: params
-  			}).success((data) ->
-  				console.log(data)
-  				$scope.$apply = () ->
-  					$scope.likes = data.article_likes
-  			)
-  			$http({
-  				method: "DELETE",
-  				url: "/article_likes/" + $scope.article_likes_id,
-  			}).success((data) ->
-  				console.log(data.status)
-  				$scope.emptyStar = !$scope.emptyStar
-  			)
-  	).
-  	then((error) ->
-  		console.log(error)
-  	)
-  	$scope.$on('devise: unauthorized', (event, xhr, deferred) ->
+  	else
   		prePath = $location.url()
-  		$location.path('/signIn').search({path:prePath})
-  	)
+  		$location.path('/signIn').search({path: prePath})
   
   # Used to show contiune story button
   $scope.showTextArea = false
@@ -142,5 +150,15 @@
     	console.log(data.status)
     	$route.reload()
     )
-		
+
+  $scope.getArticleLikeList = () ->
+  	$http({
+  		method: "GET",
+  		url: "/article_likes/get_article_likes",
+  		params: {topic_id: $scope.topicId, user_id: $scope.user.id}
+  	}).success((data) ->
+  		console.log(data)
+  		$scope.article_has_liked = data.article_has_liked
+  	)
+  	
 ]

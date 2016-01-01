@@ -22,7 +22,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :article_likes
+  resources :article_likes do
+  	collection do
+  		get :get_article_likes
+  		get :find_delete_id
+  	end
+  end
   
   # Manual routes for counts controller 
   post "/add_topic_browse_times" => "counts#add_topic_browse_times"

@@ -21,21 +21,23 @@
           <table class="table table-responsive">
         		<tbody>
         			<tr>
-    						<td class="text-left">
-    							<div ng-if="checkLike(article.id)"> 
+    						<td class="text-right col-lg-1 col-md-1 col-sm-1 col-xs-1">
+    							<div ng-if="checkLike(article.id) == true"> 
 		  							<button class="btn btn-link" ng-click="likeItOrNot(article.id, topic.id)">
-		  								<span class="glyphicon glyphicon-star" id="infoSize"></span>
+		  								<span class="fa fa-heart" id="info-size1"></span>
 		  							</button>
     							</div>
-<!--    							<div ng-if="checkLike(article.id)">
+    							<div ng-if="checkLike(article.id) == false">
 		  							<button class="btn btn-link" ng-click="likeItOrNot(article.id, topic.id)">
-		  								<span class="glyphicon glyphicon-star-empty" id="infoSize"></span>
+		  								<span class="fa fa-heart-o" id="info-size"></span>
 		  							</button>
     							</div>
--->    							{{article.likes}}
     						</td>
-    						<td class="text-right">
-    							<span class="glyphicon glyphicon-calendar" id="infoSize"></span>
+    						<td class="text-left col-lg-1 col-md-1 col-sm-1 col-xs-1" id="info-size">
+    							{{article.likes}}&nbsp;Likes
+    						</td>
+    						<td class="text-right col-lg-10 col-md-10 col-sm-10 col-xs-10">
+    							<span class="glyphicon glyphicon-calendar" id="info-size"></span>
     							{{article.created_at.substring(0,16)}}
        			 		</td>
        				</tr>
@@ -52,7 +54,5 @@
     </div>
   </div>
 </div>
-<<<<<<< HEAD
-=======
 </div>
->>>>>>> upstream/master
+
