@@ -40,7 +40,7 @@
       $('#navbar').fadeOut()
       $('#topic-title-in-articles-show').addClass('topic-title-navbar')
     else
-      $('#navbar').fadeIn()
+      $('#navbar').show()
       $('#topic-title-in-articles-show').removeClass('topic-title-navbar')
 
 

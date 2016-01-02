@@ -48,7 +48,8 @@
   	if $scope.user != undefined
   		console.log("User id:" + $scope.user.id)
   		if article_id in $scope.article_has_liked
-  			# like-count in Article Model -1 through counts_controller
+  			$scope.removeLikedArray(article_id)
+        # like-count in Article Model -1 through counts_controller
   			params = {article_id}
   			$http({
   				method: "POST",
@@ -65,10 +66,10 @@
 					params: {topic_id, user_id: $scope.user.id, article_id}
   			}).success((data) ->
   				console.log(data.status)
-  				$scope.removeLikedArray(article_id)
   			)
   		else
-  			# like-count in Article Model +1 through counts_controller
+  			$scope.pushLikedArray(article_id) 
+        # like-count in Article Model +1 through counts_controller
   			params = {user_id: $scope.user.id, article_id, topic_id}
   			$http({
   				method: "POST",
@@ -85,7 +86,6 @@
   				data: params
   			}).success((data) ->
   				console.log(data)
-  				$scope.pushLikedArray(article_id) 
   			)
   	else
   		prePath = $location.url()
