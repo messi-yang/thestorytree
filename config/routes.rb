@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources :article_likes do
   	collection do
   		get :get_article_likes
-  		get :find_delete_id
+  		delete :delete_article_like_id
   	end
   end
   
