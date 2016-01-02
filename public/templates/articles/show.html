@@ -11,34 +11,38 @@
       <ul class="list-group">
         <li class="list-group-item list-group-item-success" ng-repeat="article in articles">
           <h3>
-            <span class="glyphicon glyphicon-user">{{article.nickname}}:</span>
+            <span class="glyphicon glyphicon-user">{{nickname.article}}:</span>
           </h3> 
           <br>
           <font class="article-content-font">
             {{article.content}}
           </font>
           <br><br>
-          <table class="table table-responsive">
+          <table class="table table-responsive table-condensed">
         		<tbody>
         			<tr>
     						<td class="text-right col-lg-1 col-md-1 col-sm-1 col-xs-1">
-    							<div ng-if="checkLike(article.id) == true"> 
-		  							<button class="btn btn-link" ng-click="likeItOrNot(article.id, topic.id)">
-		  								<span class="fa fa-heart" id="info-size1"></span>
+    							<div ng-if="checkLike(article.id)"> 
+		  							<button class="btn btn-link" ng-click="likeItOrNot(article.id, topic.id, $index)">
+		  								<span class="fa fa-heart" id="heart"></span>
 		  							</button>
     							</div>
-    							<div ng-if="checkLike(article.id) == false">
-		  							<button class="btn btn-link" ng-click="likeItOrNot(article.id, topic.id)">
-		  								<span class="fa fa-heart-o" id="info-size"></span>
+    							<div ng-if="!checkLike(article.id)">
+		  							<button class="btn btn-link" ng-click="likeItOrNot(article.id, topic.id, $index)">
+		  								<span class="fa fa-heart-o" id="heart_hollow"></span>
 		  							</button>
     							</div>
+    							<div ng-if="user==undefined">
+    								<button class="btn btn-link" ng-click="likeItOrNot(article.id, topic.id, $index)">
+		  								<span class="fa fa-heart-o" id="heart_hollow"></span>
+		  							</button>
+		  						</div>
     						</td>
-    						<td class="text-left col-lg-1 col-md-1 col-sm-1 col-xs-1" id="info-size">
-    							{{article.likes}}&nbsp;Likes
+    						<td class="text-left col-lg-2 col-md-2 col-sm-1 col-xs-1">
+    							<p id="info-size">{{article.likes}}&nbsp;Likes</p>
     						</td>
-    						<td class="text-right col-lg-10 col-md-10 col-sm-10 col-xs-10">
-    							<span class="glyphicon glyphicon-calendar" id="info-size"></span>
-    							{{article.created_at.substring(0,16)}}
+    						<td class="text-right col-lg-9 col-md-9 col-sm-10 col-xs-10">
+    							<span class="glyphicon glyphicon-calendar" id="info-size">{{article.created_at.substring(0,16)}}</span>
        			 		</td>
        				</tr>
        			</tbody>

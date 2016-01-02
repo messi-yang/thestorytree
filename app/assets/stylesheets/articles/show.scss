@@ -46,13 +46,33 @@
 
 }
 
+#heart_hollow {
+	font-size: 20px;
+	color: #b4b4b4;
+	animation-name: full-become-hollow;
+	animation-duration: 0.2s;
+}
+
+@keyframes full-become-hollow {
+	from {font-size: 5px;}
+	to {font-size: 20px;}
+}
+
+#heart {
+	font-size: 20px;
+	color: #ff4040;
+	animation-name: hollow-become-full;
+	animation-duration: 0.2s;
+}
+
+@keyframes hollow-become-full {
+	from {font-size: 5px;}
+	to {font-size: 20px;}
+}
 
 #info-size {
-	font-size: 18px;
-	
+	font-size: 1.2em;
+	margin-top: 7px;
 }
 
-#info-size1 {
-	font-size: 18px;
-	color: #ff2929;
-}
+

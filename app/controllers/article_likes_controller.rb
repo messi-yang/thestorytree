@@ -9,12 +9,10 @@ class ArticleLikesController < ApplicationController
            }.to_json
 	end
 	
-	def find_delete_id
-		@delete_id = ArticleLike.select(:id).where("topic_id = ? AND user_id = ? AND article_id = ?", params[:topic_id], params[:user_id],params[:article_id])
-		
-		render json: {
-								delete_id: @delete_id.map{|x| x[:id]}
-					}.to_json
+	def delete_article_like_id
+		@article_like_id = ArticleLike.find_by("topic_id = ? AND user_id = ? AND article_id = ?", params[:topic_id], params[:user_id],params[:article_id])
+		@article_like_id.destroy
+		render json: {status: "success"}
 	end
 	
 	def create
@@ -27,11 +25,6 @@ class ArticleLikesController < ApplicationController
 		end
 	end
 	
-	def destroy
-		article_record = ArticleLike.find(params[:id])
-		article_record.destroy
-		render json: {status: "success"}
-	end
 	
 	private
 	
