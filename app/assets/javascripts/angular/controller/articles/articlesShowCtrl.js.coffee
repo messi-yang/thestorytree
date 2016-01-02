@@ -2,31 +2,36 @@
 	
   $scope.topicId=$routeParams.id
   
-  params={topic_id:$routeParams.id}
-  $http({
-    method: "POST"
-    url: "/add_topic_browse_times"
-    data: params
-  }).success((data) ->
-    console.log(data.status)
-  )	
-  
-  url = "/articles/by_topic_id?topic_id="+$scope.topicId
-  $http.get(url).success((data)->
-    console.log(data)
-    $scope.articles = data.articles
-    $scope.topic = data.topic
-  )
-  
-  Auth.currentUser().
-  	then((user) ->
-  		$scope.user = user
-  		console.log("User_id: " + $scope.user.id)
-  		$scope.getArticleLikeList()
-  	).
-  	then((error) ->
-  		console.log(error)
-  	)
+  $scope.initial=()->
+    $scope.showTextArea = false
+    $scope.showContiButton = true
+    params={topic_id:$routeParams.id}
+    $http({
+      method: "POST"
+      url: "/add_topic_browse_times"
+      data: params
+    }).success((data) ->
+      console.log(data.status)
+    )	
+    
+    url = "/articles/by_topic_id?topic_id="+$scope.topicId
+    $http.get(url).success((data)->
+      console.log(data)
+      $scope.articles = data.articles
+      $scope.topic = data.topic
+    )
+    
+    Auth.currentUser().
+    	then((user) ->
+    		$scope.user = user
+    		console.log("User_id: " + $scope.user.id)
+    		$scope.getArticleLikeList()
+    	).
+    	then((error) ->
+    		console.log(error)
+    	)
+
+  $scope.initial()
   
   # Check the initial value of like or not
   $scope.checkLike = (article_id) ->
@@ -60,7 +65,7 @@
 					params: {topic_id, user_id: $scope.user.id, article_id}
   			}).success((data) ->
   				console.log(data.status)
-  				$scope.getArticleLikeList()
+  				$scope.removeLikedArray(article_id)
   			)
   		else
   			# like-count in Article Model +1 through counts_controller
@@ -80,16 +85,13 @@
   				data: params
   			}).success((data) ->
   				console.log(data)
-  				$scope.article_likes_id = data.article_likes_id
-  				$scope.getArticleLikeList() 
+  				$scope.pushLikedArray(article_id) 
   			)
   	else
   		prePath = $location.url()
   		$location.path('/signIn').search({path: prePath})
   
   # Used to show contiune story button
-  $scope.showTextArea = false
-  $scope.showContiButton = true
   $scope.displayTextArea = () ->
     if $scope.user!=undefined
       $scope.showTextArea = !$scope.showTextArea
@@ -128,6 +130,15 @@
     	$route.reload()
     )
 	
+  $scope.removeLikedArray = (valueToDelete) ->
+    i=0
+    while valueToDelete != $scope.article_has_liked[i]
+      i++
+    $scope.article_has_liked.splice(i,1)
+    
+
+  $scope.pushLikedArray = (value) ->
+    $scope.article_has_liked.push(value)
 	
   $scope.getArticleLikeList = () ->
   	$http({
@@ -135,9 +146,8 @@
   		url: "/article_likes/get_article_likes",
   		params: {topic_id: $scope.topicId, user_id: $scope.user.id}
   	}).success((data) ->
-  		console.log(data)
-  		$scope.article_has_liked = data.article_has_liked
-  	)
+  		console.log(data+"\n"+"Liked_Map: "+data.article_has_liked)
+  		$scope.article_has_liked = data.article_has_liked  	)
   
   	
 ]
