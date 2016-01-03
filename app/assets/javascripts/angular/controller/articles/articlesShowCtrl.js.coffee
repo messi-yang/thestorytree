@@ -5,6 +5,7 @@
 
   $scope.initial=()->
     $scope.articleComments=[]
+    $scope.commentOpen=[]
     $scope.commentContents=[]
     $scope.showLeaveCommentsButton=[]
     $scope.showCommentsInput=[]
@@ -104,6 +105,9 @@
       prePath = $location.url()
       $location.path('/signIn').search({path:prePath})    
 
+  $scope.showCommentBlock = (index) ->
+    $scope.commentOpen[index]=!$scope.commentOpen[index]
+
   # Used to show contiune story button
   $scope.displayTextArea = () ->
     if $scope.user!=undefined
@@ -144,6 +148,7 @@
     )
 
   $scope.getComments = (article_id,index) ->
+    $scope.showCommentBlock(index)
     url = "/article_comments/by_article_id?article_id="+article_id
     $http.get(url).success((data)->
       console.log(data)

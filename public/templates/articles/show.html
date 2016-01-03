@@ -7,7 +7,7 @@
     <h1 class="text-center">{{topic.title}}</h1>
   </div>
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">    
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">    
       <ul class="list-group">
         <li class="list-group-item list-group-item-success" ng-repeat="article in articles">
           <h3>
@@ -37,23 +37,26 @@
 		  						</div>
     						</div>
     						<div class="text-left col-lg-1 col-md-1 col-sm-1 col-xs-1">
-    							<p id="info-size">{{article.likes}}&nbsp;Likes</p>
+    							<h2 id="info-size">{{article.likes}}</h2>
     						</div>
                 <div class="text-left col-lg-1 col-md-1 col-sm-1 col-xs-1">
                   <div>
-                    <button class="btn btn-link" ng-click="getComments(article.id,$index)">
+                    <button ng-show="commentOpen[$index]" ng-init="commentOpen[$index]=true" class="btn btn-link" ng-click="getComments(article.id,$index)">
                       <span class="fa fa-comment-o comment-icon"></span>
+                    </button>
+                    <button ng-hide="commentOpen[$index]" class="btn btn-link" ng-click="showCommentBlock($index)">
+                      <span class="fa fa-comment comment-icon"></span>
                     </button>
                   </div>
                 </div>
                 <div class="text-left col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                  <p id="info-size">{{article.comment_amount}}&nbsp;comments</p>
+                  <h2 id="info-size">{{article.comment_amount}}</h2>
                 </div>
     						<div class="text-right col-lg-8 col-md-8 col-sm-8 col-xs-8">
     							<span class="glyphicon glyphicon-calendar" id="info-size">{{article.created_at.substring(0,16)}}</span>
        			 		</div>
        		</div>
-          <div>
+          <div ng-hide="commentOpen[$index]">
             <ul class="list-group">
               <li class="list-group-item list-group-item-warning" ng-repeat="comment in articleComments[$index]">
                 <h5>
@@ -67,15 +70,15 @@
             </ul>
           </div>
           <div class="">
-          <form ng-show="showCommentsInput[$index]" ng-init="showCommentsInput[$index]=false" accept-charset="UTF-8">
-            <div class="form-group">
-              <textarea class="form-control" rows="5" ng-model="commentContents[$index]" ng-trim="false" maxlength="300">
-              </textarea>
-            </div>
-            <button ng-disabled="flase" type="submit" class="btn btn-warning" ng-click="createArticleComment(article.id,$index)">Submit</button>
-            <button class="btn btn-warning" ng-click="displayCommentsInput($index)">Cancel</button>
-          </form>
-          <button class="btn btn-warning" ng-click="displayCommentsInput($index)" ng-show="showLeaveCommentsButton[$index]" ng-init="showLeaveCommentsButton[$index]=true">Leave Comments</button>  
+            <form ng-show="showCommentsInput[$index]" ng-init="showCommentsInput[$index]=false" accept-charset="UTF-8">
+              <div class="form-group">
+                <textarea class="form-control" rows="5" ng-model="commentContents[$index]" ng-trim="false" maxlength="300">
+                </textarea>
+              </div>
+              <button ng-disabled="flase" type="submit" class="btn btn-warning" ng-click="createArticleComment(article.id,$index)">Submit</button>
+              <button class="btn btn-warning" ng-click="displayCommentsInput($index)">Cancel</button>
+            </form>
+            <button class="btn btn-warning" ng-click="displayCommentsInput($index)" ng-show="showLeaveCommentsButton[$index]" ng-init="showLeaveCommentsButton[$index]=true">Leave Comments</button>  
           </div>
         </li>
       </ul>
