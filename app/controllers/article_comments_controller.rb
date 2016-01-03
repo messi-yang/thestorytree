@@ -8,7 +8,10 @@ class ArticleCommentsController < ApplicationController
   def create
   	＠article_comment=Article.find(params[:article_id]).article_comments.build(article_comment_params)
     if ＠article_comment.save
-      render json: {status:"success"}
+      render json: {
+               status:"success",
+               article_comment:＠article_comment,  
+             }.to_json
     else
       render json: {status:"fail"}
     end

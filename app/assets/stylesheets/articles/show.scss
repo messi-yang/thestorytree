@@ -46,8 +46,8 @@
 
 }
 
-#heart_hollow {
-	font-size: 20px;
+.heart_hollow {
+	font-size: 20px !important;
 	color: #b4b4b4;
 	animation-name: full-become-hollow;
 	animation-duration: 0.2s;
@@ -58,11 +58,15 @@
 	to {font-size: 20px;}
 }
 
-#heart {
-	font-size: 20px;
+.heart {
+	font-size: 20px !important;
 	color: #ff4040;
 	animation-name: hollow-become-full;
 	animation-duration: 0.2s;
+}
+
+.comment-icon{
+  font-size: 20px !important;
 }
 
 @keyframes hollow-become-full {

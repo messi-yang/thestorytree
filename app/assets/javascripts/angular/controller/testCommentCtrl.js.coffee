@@ -9,7 +9,7 @@
       user_id:1,
       content:$scope.content
     }
-    params={article_id:20,article_comments:$scope.articleCommentAttributes}
+    params={article_id:1,article_comments:$scope.articleCommentAttributes}
     console.log(params)  	    
     $http({
     	method:"POST",

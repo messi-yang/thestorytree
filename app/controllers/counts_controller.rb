@@ -37,6 +37,20 @@ class CountsController < ApplicationController
 			render json: {status: "fail"}
 		end
 	end
+
+	def add_article_comment_amount
+	  @article_comment_amount = Article.find(params[:article_id])
+	  @article_comment_amount.comment_amount +=1
+
+	  if @article_comment_amount.save
+	    render json: {
+	    	     status: "success",
+	    	     comment_amount:@article_comment_amount.comment_amount
+	    	   }
+	  else
+	    render json: {status: "fail"}
+	  end
+	end
 	
 	private
 	

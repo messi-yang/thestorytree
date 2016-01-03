@@ -2,7 +2,12 @@
 	
   $scope.topicId=$routeParams.id
   
+
   $scope.initial=()->
+    $scope.articleComments=[]
+    $scope.commentContents=[]
+    $scope.showLeaveCommentsButton=[]
+    $scope.showCommentsInput=[]
     $scope.showTextArea = false
     $scope.showContiButton = true
     params={topic_id:$routeParams.id}
@@ -91,6 +96,14 @@
   		prePath = $location.url()
   		$location.path('/signIn').search({path: prePath})
   
+  $scope.displayCommentsInput = (index) ->
+    if $scope.user!=undefined
+      $scope.showLeaveCommentsButton[index] = !$scope.showLeaveCommentsButton[index]
+      $scope.showCommentsInput[index] = !$scope.showCommentsInput[index]
+    else
+      prePath = $location.url()
+      $location.path('/signIn').search({path:prePath})    
+
   # Used to show contiune story button
   $scope.displayTextArea = () ->
     if $scope.user!=undefined
@@ -129,6 +142,47 @@
     	console.log(data.status)
     	$route.reload()
     )
+
+  $scope.getComments = (article_id,index) ->
+    url = "/article_comments/by_article_id?article_id="+article_id
+    $http.get(url).success((data)->
+      console.log(data)
+      $scope.articleComments[index] = data
+    )
+
+  $scope.createArticleComment = (article_id,index) -> 
+    console.log("article_id:"+article_id+",index:"+index)
+    console.log("Comments["+index+"]:"+$scope.commentContents[index])
+    if $scope.user!=undefined
+      console.log("check point")
+      articleCommentAttributes={
+        user_id:$scope.user.id,
+        content:$scope.commentContents[index]
+      }
+      params={article_id:article_id,article_comments:articleCommentAttributes}
+      console.log(params)       
+      $http({
+        method:"POST",
+        url: '/article_comments'
+        data: params
+      }).success((data) ->  
+        console.log(data.status)
+        $scope.articleComments[index].push(data.article_comment)
+      )
+      params={article_id:article_id}
+      $http({
+        method:"POST",
+        url: '/add_article_comment_amount'
+        data: params
+      }).success((data) ->  
+        console.log(data.status)
+        $scope.articles[index].comment_amount=data.comment_amount
+      )
+      $scope.displayCommentsInput(index)
+    else
+      prePath = $location.url()
+      $location.path('/signIn').search({path:prePath})
+
 	
   $scope.removeLikedArray = (valueToDelete) ->
     i=0
