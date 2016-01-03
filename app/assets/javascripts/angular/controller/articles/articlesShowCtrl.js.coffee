@@ -167,6 +167,7 @@
         data: params
       }).success((data) ->  
         console.log(data.status)
+        console.log(data.article_comment)
         $scope.articleComments[index].push(data.article_comment)
       )
       params={article_id:article_id}

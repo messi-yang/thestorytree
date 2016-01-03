@@ -60,6 +60,9 @@
                   <span class="glyphicon glyphicon-user">{{comment.nickname}}:</span>
                 </h5> 
                 {{comment.content}}
+                <div class="text-right">
+                  <span class="glyphicon glyphicon-calendar" id="info-size">{{comment.created_at.substring(0,16)}}</span>
+                </div>
               </li>
             </ul>
           </div>
