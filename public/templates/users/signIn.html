@@ -1,37 +1,60 @@
+<div id="signin-background">
 <div class="container">
-  <h2>Log in</h2>
 
   <form novalidate="novalidate" class="simple_form new_user" accept-charset="UTF-8">
-    <input name="utf8" type="hidden" value="&#x2713;" />
-    <div class="form-inputs">
-      <div class="form-group email optional user_email">
-        <label class="email optional control-label">Email</label>
-          <input class="string email optional form-control" autofocus="autofocus" type="email" ng-model="email"/>
-      </div>
-      <div class="form-group password optional user_password">
-        <label class="password optional control-label">Password</label>
-          <input class="password optional form-control" type="password" ng-model="password"/>
-      </div>
-      <div class="form-group boolean optional user_remember_me">
-        <div class="checkbox">
-          <label class="boolean optional">
-	    <input class="boolean optional" type="checkbox" ng-click="setRemember()"/>
-          Remember me
-          </label>
+    <div class="row">
+      <div class="col-lg-7 col-lg-offset-0 col-md-7 col-md-offset-0 col-sm-7 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+        <div class="signin-description text-center">
+          <h2><strong>Welcome Back =)</strong></h2>
+          <h3>
+            Sign In & Continue Your Story.
+          </h3>
         </div>
       </div>
-    </div>
+      <div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-0 col-xs-8 col-xs-offset-2" id="signin-area">
+        <input name="utf8" type="hidden" value="&#x2713;" />
+        <div class="form-inputs">
+          <div class="form-group email optional user_email">
+            <label class="email optional control-label">Email</label>
+              <input class="string email optional form-control" autofocus="autofocus" type="email" ng-model="email"/>
+          </div>
+          <div class="form-group password optional user_password">
+            <label class="password optional control-label">Password</label>
+              <input class="password optional form-control" type="password" ng-model="password"/>
+          </div>
+          <div class="form-group boolean optional user_remember_me">
+            <div class="checkbox">
+              <label class="boolean optional">
+	            <input class="boolean optional" type="checkbox" ng-click="setRemember()"/>
+                Remember me
+              </label>
+            </div>
+          </div>
+        </div>
 
-    <div class="form-actions">
-      <input type="submit" ng-click="signIn(0)" value="Log in" class="btn btn-default" />
+        <div class="form-actions">
+          <input type="submit" ng-click="signIn(0)" value="Sign in" class="btn btn-block btn-warning" />
+        </div>
+        <hr>
+        <div class="community-website-sign-in text-center">
+          <a href="/users/auth/facebook" class="btn btn-social btn-md btn-primary">
+      	    <i class="fa fa-facebook-official fa-lg"> FaceBook</i>
+          </a>
+          <a href="/users/auth/google_oauth2" class="btn btn-md btn-danger">
+            <i class="fa fa-google fa-lg"> Google</i>  
+          </a>
+        </div><br>
+        <div class="already-member text-center">
+          <em>Not a Member Yet?</em>&nbsp;
+          <a href="#/signUp" class="btn btn-link btn-lg">Sign Up</a>
+        </div>
+        <div class="test-account text-center"> 
+          <a ng-click="signIn(1)" class="btn btn-md btn-danger text-center">Sign In With Test Account</a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-lg-offset-0 col-md-1 col-md-offset-0 col-sm-0 col-sm-offset-0 col-xs-0 col-xs-offset-0">
+      </div>
     </div>
-  </form><br>
-   <a href="#/signUp" class="btn btn-lg btn-danger">Go to Sign-Up Page</a><br /><br>
-   <a ng-click="signIn(1)" class="btn btn-lg btn-danger">Sgin In With Test Account</a><br><br>
-   <a href="/users/auth/facebook" class="btn btn-lg btn-primary">
-     <i class="fa fa-facebook-f"></i>  
-   </a>
-   <a href="/users/auth/google_oauth2" class="btn btn-lg btn-danger">
-     <i class="fa fa-google"></i>  
-   </a><br>
+  </form>
+</div>
 </div>

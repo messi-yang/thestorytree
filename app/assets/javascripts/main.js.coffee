@@ -2,10 +2,6 @@
 
 @StoryTree.config(['$routeProvider',($routeProvider) ->
   $routeProvider.
-    when('/introduction',{
-      templateUrl: '../templates/introduction.html',
-      controller: 'introductionCtrl'
-    }).
     when('/',{
       templateUrl: '../templates/storyHome.html',
       controller: 'storyHomeCtrl'

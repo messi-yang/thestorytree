@@ -1,45 +1,67 @@
+<div id="signup-background">
 <div class="container">
-<h2>Sign up</h2>
 
 <form novalidate="novalidate" class="simple_form new_user" accept-charset="UTF-8">
-  <div class="form-inputs">
-    <div class="form-group email required user_email">
-      <label class="email required control-label">
-        <abbr title="required">*</abbr> Email
-      </label>
-      <input class="string email required form-control" ng-model="email" type="email" autofocus="autofocus"/>
+  <div class="row">
+    <div class="col-lg-7 col-lg-offset-0 col-md-7 col-md-offset-0 col-sm-7 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+      <div class="signup-description text-center">
+        <h2><strong>Welcome to Story Tree :)</strong></h2>
+        <h3>
+          Turn Your Imagination Into Words !<br>
+          Start Your Journey By Joining Us. 
+        </h3>
+      </div>
     </div>
-    <div class="form-group password required user_password">
-      <label class="password required control-label">
-        <abbr title="required">*</abbr> Password
-      </label>
-      <input class="password required form-control" ng-model="password" type="password"/>
-      <p class="help-block">8 characters minimum</p>
-    </div>
-    <div class="form-group password required user_password_confirmation">
-      <label class="password required control-label">
-        <abbr title="required">*</abbr> Password confirmation
-      </label>
-      <input class="password required form-control" ng-model="password_confirmation" type="password"/>
-    </div>
-     <div class="form-group required">
-      <label class="control-label required control-label">
-        <abbr title="required">*</abbr> Nickname
-      </label>
-      <input class="control required form-control" ng-model="nickname"/>
-    </div>
-  </div>
+    <div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-0 col-xs-8 col-xs-offset-2" id="signup-area"> 
+      <div class="form-inputs">
+        <div class="form-group email required user_email">
+          <label class="email required control-label">
+            <abbr title="required">*</abbr> Email
+          </label>
+          <input class="string email required form-control" ng-model="email" type="email" autofocus="autofocus"/>
+        </div>
+        <div class="form-group password required user_password">
+          <label class="password required control-label">
+            <abbr title="required">*</abbr> Password
+          </label>
+          <input class="password required form-control" ng-model="password" type="password"/>
+          <p class="help-block">8 characters minimum</p>
+        </div>
+        <div class="form-group password required user_password_confirmation">
+          <label class="password required control-label">
+            <abbr title="required">*</abbr> Password confirmation
+          </label>
+          <input class="password required form-control" ng-model="password_confirmation" type="password"/>
+        </div>
+        <div class="form-group required">
+          <label class="control-label required control-label">
+            <abbr title="required">*</abbr> Nickname
+          </label>
+          <input class="nickname required form-control" ng-model="nickname"/>
+        </div>
 
-  <div class="form-actions">
-    <input type="submit" ng-click="signUp()" value="Sign up" class="btn btn-lg btn-danger" />
+        <div class="form-actions">
+          <input type="submit" ng-click="signUp()" value="Sign Up" class="btn btn-md btn-block btn-warning" />
+        </div>
+      </div>
+      <hr>
+      <div class="community-website-sign-in text-center">
+        <a href="/users/auth/facebook" class="btn btn-social btn-md btn-primary">
+      	  <i class="fa fa-facebook-official fa-lg"> FaceBook</i>
+        </a>
+        <a href="/users/auth/google_oauth2" class="btn btn-md btn-danger">
+          <i class="fa fa-google fa-lg"> Google</i>  
+        </a>
+      </div><br>
+      <div class="already-member text-center">
+        <em>Already a Member?</em>&nbsp;
+        <a href="#/signIn" class="btn btn-lg btn-link">Sign In</a>
+      </div>
+    </div>
+    <div class="col-lg-1 col-lg-offset-0 col-md-1 col-md-offset-0 col-sm-0 col-sm-offset-0 col-xs-0 col-xs-offset-0">
+    </div>
   </div>
 </form><br>
-<a href="#/signIn" class="btn btn-lg btn-danger">Go To Log-In Page</a><br><br/>
-<a href="/users/auth/facebook" class="btn btn-social btn-lg btn-primary">
-  <span class="fa fa-facebook"></span>
-</a>
-<a href="/users/auth/google_oauth2" class="btn btn-lg btn-danger">
-     <i class="fa fa-google"></i>  
-</a><br><br>
-
+<br><br/>
+</div>
 </div>
