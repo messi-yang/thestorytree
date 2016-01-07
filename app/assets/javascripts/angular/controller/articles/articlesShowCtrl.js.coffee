@@ -28,75 +28,75 @@
     )
     
     Auth.currentUser().
-    	then((user) ->
-    		$scope.user = user
-    		console.log("User_id: " + $scope.user.id)
-    		$scope.getArticleLikeList()
-    	).
-    	then((error) ->
-    		console.log(error)
-    	)
+      then((user) ->
+    	  $scope.user = user
+    	  console.log("User_id: " + $scope.user.id)
+    	  $scope.getArticleLikeList()
+      ).
+      then((error) ->
+    	  console.log(error)
+      )
 
   $scope.initial()
   
   # Check the initial value of like or not
   $scope.checkLike = (article_id) ->
-  	if article_id in $scope.article_has_liked
-  		true
-  	else
-  		false
+    if article_id in $scope.article_has_liked
+      true
+    else
+      false
   
   $scope.backToShowTopics = () ->
     $location.path('/')
   
   # Like & Unlike Button Mechanism
   $scope.likeItOrNot = (article_id, topic_id, index) ->
-  	if $scope.user != undefined
-  		console.log("User id:" + $scope.user.id)
-  		if article_id in $scope.article_has_liked
-  			$scope.removeLikedArray(article_id)
+    if $scope.user != undefined
+      console.log("User id:" + $scope.user.id)
+      if article_id in $scope.article_has_liked
+        $scope.removeLikedArray(article_id)
         # like-count in Article Model -1 through counts_controller
-  			params = {article_id}
-  			$http({
-  				method: "POST",
-  				url: "/add_article_likes"
-  				data: params
-  			}).success((data) ->
-  				console.log(data)
-  				$scope.articles[index].likes = data.article_likes
-  			)
-  			# delete user & topic info. about the article liked through article_likes_controller
-  			$http({
-					method: "DELETE",
-					url: "/article_likes/delete_article_like_id",
-					params: {topic_id, user_id: $scope.user.id, article_id}
-  			}).success((data) ->
-  				console.log(data.status)
-  			)
-  		else
-  			$scope.pushLikedArray(article_id) 
+        params = {article_id}
+        $http({
+          method: "POST",
+          url: "/add_article_likes"
+          data: params
+        }).success((data) ->
+          console.log(data)
+          $scope.articles[index].likes = data.article_likes
+        )
+        # delete user & topic info. about the article liked through article_likes_controller
+        $http({
+	        method: "DELETE",
+	        url: "/article_likes/delete_article_like_id",
+	        params: {topic_id, user_id: $scope.user.id, article_id}
+        }).success((data) ->
+          console.log(data.status)
+        )
+      else
+        $scope.pushLikedArray(article_id) 
         # like-count in Article Model +1 through counts_controller
-  			params = {user_id: $scope.user.id, article_id, topic_id}
-  			$http({
-  				method: "POST",
-  				url: "/add_article_likes",
-  				data: params
-  			}).success((data) ->
-  				console.log(data)
-  				$scope.articles[index].likes = data.article_likes
-  			)
-  			# record user & topic info. about the article liked through article_likes_controller
-  			$http({
-  				method: "POST",
-  				url: "/article_likes",
-  				data: params
-  			}).success((data) ->
-  				console.log(data)
-  			)
-  	else
-  		prePath = $location.url()
-  		$location.path('/signIn').search({path: prePath})
-  
+        params = {user_id: $scope.user.id, article_id, topic_id}
+        $http({
+          method: "POST",
+          url: "/add_article_likes",
+          data: params
+        }).success((data) ->
+          console.log(data)
+          $scope.articles[index].likes = data.article_likes
+        )
+        # record user & topic info. about the article liked through article_likes_controller
+        $http({
+          method: "POST",
+          url: "/article_likes",
+          data: params
+        }).success((data) ->
+          console.log(data)
+        )
+    else
+      prePath = $location.url()
+      $location.path('/signIn').search({path: prePath})
+
   $scope.displayCommentsInput = (index) ->
     if $scope.user!=undefined
       $scope.showLeaveCommentsButton[index] = !$scope.showLeaveCommentsButton[index]
@@ -201,13 +201,14 @@
     $scope.article_has_liked.push(value)
 	
   $scope.getArticleLikeList = () ->
-  	$http({
-  		method: "GET",
-  		url: "/article_likes/get_article_likes",
-  		params: {topic_id: $scope.topicId, user_id: $scope.user.id}
-  	}).success((data) ->
-  		console.log(data+"\n"+"Liked_Map: "+data.article_has_liked)
-  		$scope.article_has_liked = data.article_has_liked  	)
-  
-  	
+    $http({
+      method: "GET",
+      url: "/article_likes/get_article_likes",
+      params: {topic_id: $scope.topicId, user_id: $scope.user.id}
+    }).success((data) ->
+      console.log(data+"\n"+"Liked_Map: "+data.article_has_liked)
+      $scope.article_has_liked = data.article_has_liked
+    )
+
+
 ]
