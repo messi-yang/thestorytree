@@ -7,6 +7,7 @@
     $http.get(url).success((data)->
       console.log(data)
       $scope.topics = data
+      #$scope.topics[0].content = $scope.topics[0].content.replace(/(?:\r\n|\r|\n)/g,'<br>')
     )
     #remove and add to make animation restart
     
