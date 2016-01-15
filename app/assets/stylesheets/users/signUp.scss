@@ -1,5 +1,5 @@
 
-#signup-background {
+#sign-up-div {
   -webkit-animation-name: background-change;
   -webkit-animation-duration: 70s;
   -webkit-animation-delay: 0s;
@@ -7,30 +7,32 @@
   background-image: url(image-path('signin_signup_background-4.jpg'));
   background-size: cover;
   background-repeat: no-repeat;
+
+  @-webkit-keyframes background-change {
+    0% {background: url(image-path('signin_signup_background-1.jpg')) no-repeat; background-size:cover;}
+    20% {background: url(image-path('signin_signup_background-2.jpg')) no-repeat; background-size:cover;}
+    40% {background: url(image-path('signin_signup_background-3.jpg')) no-repeat; background-size:cover;}
+    60% {background: url(image-path('signin_signup_background-4.jpg')) no-repeat; background-size:cover;}
+    80% {background: url(image-path('signin_signup_background-5.jpg')) no-repeat; background-size:cover;}
+    100% {background: url(image-path('signin_signup_background-1.jpg')) no-repeat; background-size:cover;}
+  }
+
+  .signup-description {
+    padding-top: 50px;
+    color: white !important;
+  }
+
+  #signup-area {
+    margin-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background: rgba(238,238,238,0.75);
+    border-radius: 6px;
+  }
+
+  em {
+    font-size: 16px;
+  }
 }
 
-@-webkit-keyframes background-change {
-  0% {background: url(image-path('signin_signup_background-1.jpg')) no-repeat; background-size:cover;}
-  20% {background: url(image-path('signin_signup_background-2.jpg')) no-repeat; background-size:cover;}
-  40% {background: url(image-path('signin_signup_background-3.jpg')) no-repeat; background-size:cover;}
-  60% {background: url(image-path('signin_signup_background-4.jpg')) no-repeat; background-size:cover;}
-  80% {background: url(image-path('signin_signup_background-5.jpg')) no-repeat; background-size:cover;}
-  100% {background: url(image-path('signin_signup_background-1.jpg')) no-repeat; background-size:cover;}
-}
 
-.signup-description {
-  padding-top: 50px;
-  color: white !important;
-}
-
-#signup-area {
-  margin-top: 30px;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  background: rgba(238,238,238,0.75);
-  border-radius: 6px;
-}
-
-em {
-  font-size: 16px;
-}

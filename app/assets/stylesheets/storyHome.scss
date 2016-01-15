@@ -1,4 +1,4 @@
-#storyHomePage{
+#story-home-page{
   background-image: url(image-path('story_home_background.jpg'));
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -44,7 +44,7 @@
     color: #000000;
   }
   
-  .titleCemmentFont{
+  .title-comment-font{
     font-size:40px;
     color:white;
   }
@@ -81,7 +81,7 @@
     z-index:2;
   }
   
-  #firstDiv{
+  #first-div{
     height:280px;
     #background-color:#108d10;
   
@@ -93,7 +93,7 @@
   
   }
   
-  #newTopicDiv{
+  #new-topic-div{
     float: none;
     display: block;
     margin-left: auto;
