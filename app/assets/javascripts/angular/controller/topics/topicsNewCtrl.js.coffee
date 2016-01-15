@@ -26,7 +26,6 @@
       console.log("status: "+data.status)
       $scope.nicknameModalCtrl=''
     )
-
   
   # Initialize the value
   $scope.topic={
