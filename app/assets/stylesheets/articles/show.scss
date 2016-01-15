@@ -1,81 +1,83 @@
-.article-content-font{
-  font-size:30px !important;
-}
-
-
-#articlesShowPage{
-}
-
-.topic-title-navbar h1{
-  position: fixed;
-  top:-20px;
-  left:-20px;
-  z-index:2;
-  padding-left:30px;
-  padding-right:30px;
-  background-color:#108d10;
-  border-radius:30px !important;
-  animation-name:topic-title-navbar-move-left;
-  animation-duration:1s;
-  animation-delay:0s;
- }
-
-@keyframes topic-title-navbar-move-left{
-  0%{
-    position: fixed;
-    top:30px;
-    left:500px;
-    z-index:2;
-    background-color:none;
+div#articlesShowPage{
+  .article-content-font{
+    font-size:30px !important;
+    white-space: pre-line;
+    margin-left:5%;
+    margin-right:5%;
   }
-  100%{
+  
+  
+  .topic-title-navbar h1{
     position: fixed;
     top:-20px;
     left:-20px;
     z-index:2;
+    padding-left:30px;
+    padding-right:30px;
     background-color:#108d10;
-  }  
-}
-
-.back-to-story-home-btn{
-  position: fixed;
-  left:0px;
-  bottom:90px;
-  z-index:2;
-  border-radius:30px !important;
-
-}
-
-.heart_hollow {
-	font-size: 30px !important;
-	color: #b4b4b4;
-	animation-name: full-become-hollow;
-	animation-duration: 0.2s;
-}
-
-@keyframes full-become-hollow {
-	from {font-size: 5px;}
-	to {font-size: 30px;}
-}
-
-.heart {
-	font-size: 30px !important;
-	color: #ff4040;
-	animation-name: hollow-become-full;
-	animation-duration: 0.2s;
-}
-
-.comment-icon{
-  font-size: 30px !important;
-}
-
-@keyframes hollow-become-full {
-	from {font-size: 5px;}
-	to {font-size: 30px;}
-}
-
-#info-size {
-	margin-top: 5px;
+    border-radius:30px !important;
+    animation-name:topic-title-navbar-move-left;
+    animation-duration:1s;
+    animation-delay:0s;
+   }
+  
+  @keyframes topic-title-navbar-move-left{
+    0%{
+      position: fixed;
+      top:30px;
+      left:500px;
+      z-index:2;
+      background-color:none;
+    }
+    100%{
+      position: fixed;
+      top:-20px;
+      left:-20px;
+      z-index:2;
+      background-color:#108d10;
+    }
+  }
+  
+  .back-to-story-home-btn{
+    position: fixed;
+    left:0px;
+    bottom:90px;
+    z-index:2;
+    border-radius:30px !important;
+  
+  }
+  
+  .heart_hollow {
+          font-size: 30px !important;
+          color: #b4b4b4;
+          animation-name: full-become-hollow;
+          animation-duration: 0.2s;
+  }
+  
+  @keyframes full-become-hollow {
+          from {font-size: 5px;}
+          to {font-size: 30px;}
+  }
+  
+  .heart {
+          font-size: 30px !important;
+          color: #ff4040;
+          animation-name: hollow-become-full;
+          animation-duration: 0.2s;
+  }
+  
+  .comment-icon{
+    font-size: 30px !important;
+  }
+  
+  @keyframes hollow-become-full {
+          from {font-size: 5px;}
+          to {font-size: 30px;}
+  }
+  
+  #info-size {
+          margin-top: 5px;
+  }
 }
 
 
