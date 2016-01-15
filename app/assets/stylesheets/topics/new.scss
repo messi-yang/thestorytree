@@ -1,4 +1,37 @@
+#topic-new {
+  background-color: #f0f0f0;
+}
+
 .nick-name-block{
   display: block !important; 
   padding-left: 0px !important;
+}
+
+#form-title-image {
+  background-image: url(image-path('articles_new_title_image.jpg'));
+  background-size: 800px 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  opacity: 0.8;
+}
+
+.block {
+  width: 500px;
+  height: 280px;
+  background-color: transparent;
+}
+
+label {
+  font-size: 1.3em;
+}
+
+span {
+  font-size: 1.1em;
+}
+
+#tooltip {
+  font-size: 18px;
+  font-weight: bold;
+  color: #41005e;
 }

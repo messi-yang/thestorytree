@@ -118,34 +118,38 @@
       $location.path('/signIn').search({path:prePath})
 
   $scope.createArticle = () -> 
-    # use to count article amounts under the same topic
-    param={topic_id:$scope.topicId}
-    $http({
-    	method: "POST",
-    	url: "/add_topic_article_amounts"
-    	data: param
-    }).success((data) ->
-    	console.log(data.status)
-    )
-    # use to create the new story under the same topic
-    $scope.articlesAttributes={
-      user_id:$scope.user.id,
-      first_article:false,
-      likes:0,
-      report_times:0,
-      comment_amount:0,
-      content:$scope.content
-    }
-    params={topic_id:$scope.topicId,article:$scope.articlesAttributes}
-    $http({
-    	method:"POST",
-    	url: '/articles'
-    	data: params
-    }).success((data) ->  
-    	url="/show/"+$scope.topicId 	
-    	console.log(data.status)
-    	$route.reload()
-    )
+    if $scope.content.length < 10
+      $scope.wrongContent = true
+    else
+      $scope.wrongContent = false
+      # use to count article amounts under the same topic
+      param={topic_id:$scope.topicId}
+      $http({
+      	method: "POST",
+      	url: "/add_topic_article_amounts"
+      	data: param
+      }).success((data) ->
+      	console.log(data.status)
+      )
+      # use to create the new story under the same topic
+      $scope.articlesAttributes={
+        user_id:$scope.user.id,
+        first_article:false,
+        likes:0,
+        report_times:0,
+        comment_amount:0,
+        content:$scope.content
+      }
+      params={topic_id:$scope.topicId,article:$scope.articlesAttributes}
+      $http({
+      	method:"POST",
+      	url: '/articles'
+      	data: params
+      }).success((data) ->  
+      	url="/show/"+$scope.topicId 	
+      	console.log(data.status)
+      	$route.reload()
+      )
 
   $scope.getComments = (article_id,index) ->
     $scope.showCommentBlock(index)

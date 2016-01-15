@@ -83,7 +83,9 @@
         </li>
       </ul>
       <form ng-show="showTextArea">
-        <textarea class="form-control" rows="5" ng-model="content"></textarea>
+        <font ng-show="wrongContent" class='text-danger'><strong>**Input Too Short**</strong></font>
+        <textarea class="form-control" rows="5" ng-model="content" maxlength="300"></textarea>
+        <p>10~300 Words , There Are {{300-content.length}} Words Left~</p>
         <button class="btn btn-success" ng-click="createArticle()">Submit</button>
         <button class="btn btn-success" ng-click="displayTextArea()">Cancel</button>
       </form>
