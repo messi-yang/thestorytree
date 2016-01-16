@@ -8,6 +8,17 @@
     console.log(error)
   )
 
+  $scope.initial = () ->
+    $scope.wrongEmailFormat=false
+
+  $scope.initial()
+
+  $scope.checkSignUp =() ->
+    emailFormat=/[a-zA-Z0-9_]{0,25}@([a-zA-Z0-9_]+\.)*(com$)/    
+    $scope.wrongEmailFormat=!emailFormat.test($scope.email)   
+    if !$scope.wrongEmailFormat
+      $scope.signUp()
+
   $scope.signUp = () ->
     urlParams = $location.search()
     credentials ={
@@ -28,12 +39,13 @@
       $('#showSignOut').show()
       $('#showRegister').hide()
       $('#showSignIn').hide()
-      $location.path(urlParams.path||'/')
     ).
     then((error)->
+      alert("This Email's not allowed , someone's used!")
+    )
 
-    )
-    
     $scope.$on('devise:new-registration',(event,user)->
+      $location.path(urlParams.path||'/')
     )
+
 ]

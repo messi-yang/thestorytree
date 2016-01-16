@@ -17,6 +17,7 @@
         <div class="form-group email required user_email">
           <label class="email required control-label">
             <abbr title="required">*</abbr> Email
+            <font ng-show="wrongEmailFormat" class='text-danger'> **Wrong Email Format**</font>
           </label>
           <input class="string email required form-control" ng-model="email" type="email" autofocus="autofocus"/>
         </div>
@@ -35,13 +36,14 @@
         </div>
         <div class="form-group required">
           <label class="control-label required control-label">
-            <abbr title="required">*</abbr> Nickname
+            Nickname
+            <font ng-show="wrongNicknameFormat" class='text-danger'> **Wrong Nickname Format**</font>
           </label>
           <input class="nickname required form-control" ng-model="nickname"/>
         </div>
 
         <div class="form-actions">
-          <input type="submit" ng-click="signUp()" value="Sign Up" class="btn btn-md btn-block btn-warning" />
+          <input type="submit" ng-click="checkSignUp()" value="Sign Up" class="btn btn-md btn-block btn-warning" />
         </div>
       </div>
       <hr>
