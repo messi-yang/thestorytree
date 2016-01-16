@@ -41,7 +41,7 @@
       $('#showSignIn').hide()
     ).
     then((error)->
-      alert("This Email's not allowed , someone's used!")
+      #alert("This Email's not allowed , someone's used!")
     )
 
     $scope.$on('devise:new-registration',(event,user)->

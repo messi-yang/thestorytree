@@ -1,6 +1,7 @@
 @StoryTree.controller 'signInCtrl' , ['$scope','$http','$location','Auth',($scope,$http,$location,Auth)->
   
   $scope.rememberMe='0'
+  $scope.wrongIdAndPassword=false
 
   Auth.currentUser().
   then((user)->
@@ -15,6 +16,13 @@
       $scope.rememberMe ='1'
     else
       $scope.rememberMe ='0'
+
+  $scope.checkSignIn = (mode) ->
+    $scope.wrongIdAndPassword=false
+    emailFormat=/[a-zA-Z0-9_]{0,25}@([a-zA-Z0-9_]+\.)*(com$)/        
+    $scope.wrongEmailFormat=!emailFormat.test($scope.email)   
+    if !$scope.wrongEmailFormat
+      $scope.signIn(mode)
 
   $scope.signIn = (mode) ->
     urlParams=null
@@ -45,6 +53,7 @@
 
     Auth.login(credentials,config).
     then((user)->
+      #login success
       $('#showSignOut').show()
       $('#showRegister').hide()
       $('#showSignIn').hide()
@@ -53,6 +62,7 @@
     then((error)->
 
     )
+    $scope.wrongIdAndPassword=true
     
     $scope.$on('devise:login',(event,currentUser)->
     )
