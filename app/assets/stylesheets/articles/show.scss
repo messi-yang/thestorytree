@@ -2,7 +2,7 @@ div#articles-show-page{
 
 
   .article-content-font{
-    font-size:30px !important;
+    font-size:2em !important;
     white-space: pre-line;
     margin-left:5%;
     margin-right:5%;
@@ -50,35 +50,44 @@ div#articles-show-page{
   }
   
   .heart-hollow {
-          font-size: 30px !important;
-          color: #b4b4b4;
-          animation-name: full-become-hollow;
-          animation-duration: 0.2s;
+    font-size: 2em !important;
+    color: #b4b4b4;
+    animation-name: full-become-hollow;
+    animation-duration: 0.2s;
   }
   
   @keyframes full-become-hollow {
-          from {font-size: 5px;}
-          to {font-size: 30px;}
+    from {font-size: 1em;}
+    to {font-size: 2em;}
   }
   
   .heart {
-          font-size: 30px !important;
-          color: #ff4040;
-          animation-name: hollow-become-full;
-          animation-duration: 0.2s;
+    font-size: 2em !important;
+    color: #ff4040;
+    animation-name: hollow-become-full;
+    animation-duration: 0.2s;
   }
   
   .comment-icon{
-    font-size: 30px !important;
+    font-size: 2em !important;
   }
   
   @keyframes hollow-become-full {
-          from {font-size: 5px;}
-          to {font-size: 30px;}
+    from {font-size: 1em;}
+    to {font-size: 2em;}
   }
   
   #info-size {
-          margin-top: 5px;
+    margin-top: 5px;
+  }
+  
+  #calendar-size {
+    padding-top: 10px;
+    font-size: 1.6em;
+  }
+  
+  .story-continue-area {
+    padding-bottom: 20px;
   }
 }
 
