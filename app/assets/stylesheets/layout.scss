@@ -5,6 +5,10 @@ html, #body{
   background-attachment: fixed;
 }
 
+.nav-bar-button{
+  color:black !important;
+}
+
 #wrapper {
   min-height: 100%;  
   position: relative;
@@ -15,15 +19,24 @@ html, #body{
 	padding-bottom: 75px;
 }
 
+.icon-bar-custom{
+  background-color:#10bd10 !important;
+}
+
+.navbar-toggle-custom{
+  border:1px solid #10bd10 !important;
+}
+
 .navbar-custom{
-    background:#108d10;
+    background:#108d10 !important;
    # background:-webkit-linear-gradient(#102010,#105d10);
     #background:-o-linear-gradient(#102010, #105d10);
     #background:-moz-linear-gradient(#102010, #105d10);
     #background:linear-gradient(#102010, #105d10);
+    border:0px !important;
 }
 .whiteFont{
-    color:white;
+    color:white !important;
 }
 .whiteFont:hover{
     color:black;
