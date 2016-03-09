@@ -55,6 +55,7 @@
     then((user)->
       #login success
       $('#showSignOut').show()
+      $('#profile').show()
       $('#showRegister').hide()
       $('#showSignIn').hide()
       $location.path(urlParams.path||'/')

@@ -3,6 +3,7 @@
   Auth.currentUser().
   then((user)->
     $('#showSignOut').show()
+    $('#profile').show()
     $('#showRegister').hide()
     $('#showSignIn').hide()
   ).
@@ -11,6 +12,7 @@
   )
   $scope.$on('devise:unauthorized',(event, xhr, deferred)->
     $('#showSignOut').hide()
+    $('#profile').hide()
     $('#showRegister').show()
     $('#showSignIn').show()
   )
@@ -25,6 +27,7 @@
     Auth.logout(config).
     then((oldUser)->
       $('#showSignOut').hide()
+      $('#profile').hide()
       $('#showRegister').show()
       $('#showSignIn').show()
       url=$location.url()

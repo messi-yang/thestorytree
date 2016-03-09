@@ -37,6 +37,7 @@
     Auth.register(credentials,config).
     then((registeredUser)->
       $('#showSignOut').show()
+      $('#profile').show()
       $('#showRegister').hide()
       $('#showSignIn').hide()
     ).
