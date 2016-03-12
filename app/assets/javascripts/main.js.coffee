@@ -14,6 +14,10 @@
       templateUrl: '../templates/articles/show.html',
       controller: 'articlesShowCtrl'
     }).
+    when('/profileMenu',{
+      templateUrl: '../templates/users/profileMenu.html',
+      controller: 'profileMenuCtrl'
+    }).
     when('/signIn',{
       templateUrl: '../templates/users/signIn.html',
       controller: 'signInCtrl'
